@@ -64,6 +64,7 @@
 ## 設計書
 
 ### 機能一覧
+	https://docs.google.com/spreadsheets/d/1hJP9zNlzBszInybKnoYkTYTja-JIB11AzngfKZbQOFs/edit?usp=sharing
 
 
 ## 開発環境
