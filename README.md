@@ -62,6 +62,9 @@
 	また、次に育てる植物を難易度を目安に検索。
 
 ## 設計書
+	ER図　https://app.diagrams.net/#G1FRFjPphTrzOfSHhDfmBxgr76H849YAzy
+	画面遷移図　
+	ワイヤーフレーム　
 
 ### 機能一覧
 
