@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_133001) do
     t.string "image_id"
     t.string "name"
     t.text "introduction"
+    t.string "like_plant"
     t.boolean "is_active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
