@@ -1,4 +1,6 @@
-# 	Plant diary
+
+# Plant diary
+
 ## サイト概要
 	ユーザー登録をして、自分が育てている植物を投稿していくアプリケーションです。
 	一つの投稿にツリー形式で続けて書くことで、日記をつけるような感覚で記録ができます。
@@ -48,7 +50,6 @@
 	植物の名前、タグでの検索ができます
 	初心者、慣れてきた人、上級者、Help!の４パターンの閲覧数ランキングを確認できます。
 
-
 ### サイトテーマ
 	初心者から上級者まで、植物を育てる人のためのサイトです。
 
@@ -72,7 +73,7 @@
 	テーブル定義書　https://docs.google.com/spreadsheets/d/1WSwWNxftdOlWBA1F8cTQqIh5L37VRJmnz6WMQMz_0B8/edit#gid=1324493126
 
 ### 機能一覧
-	https://docs.google.com/spreadsheets/d/1hJP9zNlzBszInybKnoYkTYTja-JIB11AzngfKZbQOFs/edit?usp=sharing
+- https://docs.google.com/spreadsheets/d/1hJP9zNlzBszInybKnoYkTYTja-JIB11AzngfKZbQOFs/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
