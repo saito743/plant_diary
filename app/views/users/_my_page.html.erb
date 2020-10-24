@@ -1,0 +1,9 @@
+<span>マイページ</span>
+  <div>
+    <span><%= user.name %></span>
+    <%= attachment_image_tag(@user, :image_id, :fill, 100, 100, fallback: "no_image.jpg") %>
+    <span>自己紹介</span>
+      <%= user.introduction %>
+    <span>好きな植物</span><%= user.like_plant %>
+    <%= link_to "編集",edit_user_path(user) %>
+  </div>

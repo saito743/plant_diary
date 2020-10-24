@@ -1,7 +1,5 @@
-<div>
-  <% @user.each do |user| %>
-    <%= user.name %>
-    <%= user.introduction %>
-    <%= user.like_plant %>
-  <% end %>
-</div>
+<% if @user != current_user %>
+  <%= render "users/user_page",user: @user %>
+<% else %>
+  <%= render "users/my_page", user: @user %>
+<% end %>

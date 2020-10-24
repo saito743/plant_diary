@@ -12,4 +12,8 @@ class User < ApplicationRecord
   has_many :follower, class_name:"Follow", foreign_key:"follower_id",dependent: :destroy  #フォロワー取得
   has_many :followed_user, through: :followed, source: :follower  #自分のことをフォローしてるユーザー
   has_many :following_user, through: :follower, source: :followed  #自分がフォローしてるユーザー
+
+  validates_uniqueness_of :email
+  validates :name, length: { in: 2..10 }
+  validates :introduction, length: { maximum: 200 }
 end
