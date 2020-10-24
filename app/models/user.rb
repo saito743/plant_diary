@@ -16,4 +16,6 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   validates :name, length: { in: 2..10 }
   validates :introduction, length: { maximum: 200 }
+
+  attachment :image
 end
