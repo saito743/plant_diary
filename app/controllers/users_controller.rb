@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
+		@plants = Plant.where(user_id: params[:id])
 	end
 
 	def edit
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
+		binding.pry
 		if @user.update(user_params)
 			redirect_to user_path(current_user)
 		else render "edit"
@@ -20,6 +22,6 @@ class UsersController < ApplicationController
 	end
 private
 	def user_params
-	  params.require(:user).permit(:name,:introduction,:like_plant, :email,:image, :is_active)
+	  params.require(:user).permit(:name,:introduction,:like_plant, :email, :image, :is_active)
 	end
 end

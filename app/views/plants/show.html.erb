@@ -1,0 +1,15 @@
+<h1><%= @plant.name %></h1>
+<div>
+  <%= attachment_image_tag(@plant, :image, :fill, 300, 300) %>
+</div>
+<div>
+  <span>分類・学名：<%= @plant.plante %></span>
+  <span>難易度：<%= @plant.difficulty %></span>
+</div>
+<div>
+  <span>本文</span>
+  <%= @plant.body %>
+</div>
+<div>
+  <%= @plant.updated_at %>
+  <%= link_to "編集する", edit_plant_path(@plant),class: "btn" %>

@@ -1,5 +1,16 @@
-<% if @user != current_user %>
-  <%= render "users/user_page",user: @user %>
-<% else %>
-  <%= render "users/my_page", user: @user %>
+<div>
+  <% if @user != current_user %>
+    <%= render "users/user_page",user: @user %>
+  <% else %>
+    <%= render "users/my_page", user: @user %>
+  <% end %>
+</div>
+<% @plants.each do |plant| %>
+  <%= link_to plant_path(plant) do %>
+  <div>
+  	<%= attachment_image_tag(plant, :image, :fill, 200, 200) %>
+    <%= plant.name %>
+    <%= plant.body %>
+  </div>
+  <% end %>
 <% end %>

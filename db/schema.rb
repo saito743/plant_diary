@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_133001) do
     t.integer "user_id", null: false
     t.string "name", null: false
     t.text "body", null: false
-    t.string "image_id", null: false
+    t.string "image_id"
     t.string "plante"
     t.string "difficulty", null: false
     t.datetime "created_at", null: false
