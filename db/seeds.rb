@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Category.create!(
+	name: "初心者おすすめ")
+
+Category.create!(
+	name: "慣れてきた人おすすめ")
+
+Category.create!(
+	name: "上級者おすすめ")

@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_133001) do
+ActiveRecord::Schema.define(version: 2020_10_25_112443) do
 
   create_table "categories", force: :cascade do |t|
-    t.integer "plant_id", null: false
-    t.integer "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "name"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_133001) do
     t.string "difficulty", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
   end
 
   create_table "tag_maps", force: :cascade do |t|

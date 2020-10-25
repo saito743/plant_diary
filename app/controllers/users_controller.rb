@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
-		@plants = Plant.where(user_id: params[:id])
+		@plants = Plant.where(user_id: params[:id]).order(created_at: "DESC").limit(2)
 	end
 
 	def edit
