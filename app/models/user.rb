@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :plants
   has_many :likes
   has_many :commrnts
+  has_many :trees
 
   has_many :followed, class_name:"Follow", foreign_key:"followed_id",dependent: :destroy  #フォロー取得
   has_many :follower, class_name:"Follow", foreign_key:"follower_id",dependent: :destroy  #フォロワー取得

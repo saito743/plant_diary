@@ -2,7 +2,7 @@ class Plant < ApplicationRecord
 	belongs_to :user
 	belongs_to :category, optional: true
 	has_many :tags, through: :tag_map
-	has_many :trees
+	has_many :trees, dependent: :destroy
 	has_many :comments
 	has_many :likes
 
@@ -10,10 +10,10 @@ class Plant < ApplicationRecord
 
 	validates :name, length: { in: 2..20 }
 	validates :body,length: { maximum:300 }
-	#validates :difficulty, numercality: {
-	#			greater_than_or_equal_to: 1,
-	#			less_than_or_equal_to: 5},
-	#			presence: true
+	validates :difficulty, numericality: {
+				greater_than_or_equal_to: 1,
+				less_than_or_equal_to: 5},
+				presence: true
 
 	def category_auto #カテゴリの自動割り振り（新規投稿時）
 		if  self.difficulty == 1.to_s || self.difficulty == 2.to_s

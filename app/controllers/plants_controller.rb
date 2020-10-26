@@ -17,6 +17,8 @@ class PlantsController < ApplicationController
 
 	def show
 		@plant = Plant.find(params[:id])
+		@tree = Tree.new
+		@trees = Tree.where(plant_id: params[:id])
 	end
 
 	def edit

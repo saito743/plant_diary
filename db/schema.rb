@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2020_10_25_112443) do
 
   create_table "trees", force: :cascade do |t|
     t.integer "plant_id", null: false
+    t.integer "user_id"
     t.string "title", null: false
     t.string "body", null: false
     t.string "image_id", null: false

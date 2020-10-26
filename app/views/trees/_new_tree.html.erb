@@ -1,0 +1,16 @@
+<div>
+  <%= form_for [plant, tree] do |f| %>
+    <div>
+		  <%= f.attachment_field :image %>
+    </div>
+    <div>
+      <%= f.label :title,"タイトル" %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :body,"本文" %>
+      <%= f.text_field :body %>
+    </div>
+      <%= f.submit "投稿する" %>
+  <% end %>
+</div>

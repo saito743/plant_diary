@@ -1,8 +1,7 @@
 class CategoriesController < ApplicationController
 	def index
-		if  params[:category_id]
-			@plants = Plant.where(category_id: params[:category_id])
-		end
+		params[:category_id]
+		@plants = Plant.where(category_id: params[:category_id])
 	end
 private
 	def category_params
