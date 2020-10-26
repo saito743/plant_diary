@@ -6,8 +6,7 @@ class PlantsController < ApplicationController
 	def create
 		@plant = Plant.new(plant_params)
 		@plant.user_id = current_user.id
-	 	@plant.category_auto
-	 	@plant.categor_id_auto
+		@plant.category_auto
 		if 	@plant.save
 			redirect_to plant_path(@plant)
 		else
@@ -27,8 +26,9 @@ class PlantsController < ApplicationController
 
 	def update
 		@plant = Plant.find(params[:id])
+		@plant.category = Category.find_by(id: @plant.category_id)
 		if  @plant.update(plant_params)
-			@plant.categor_id_auto_update
+			@plant.category_id_auto_update
 			@plant.category_auto_update
 			redirect_to plant_path(@plant)
 		else

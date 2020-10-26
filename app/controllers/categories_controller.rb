@@ -1,7 +1,11 @@
 class CategoriesController < ApplicationController
 	def index
-		params[:category_id]
-		@plants = Plant.where(category_id: params[:category_id])
+		if 	params[:category_id] <= 3.to_s &&  params[:category_id] >= 1.to_s
+			@plants = Plant.where(category_id: params[:category_id])
+			@category = Category.find(params[:category_id])
+		else
+			redirect_to root_path
+		end
 	end
 private
 	def category_params
