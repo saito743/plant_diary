@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <%= render "layouts/after_login" %>
+      <% else %>
+        <%= render "layouts/before_login" %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,23 @@
+<h1>プロフィール編集</h1>
+<div>
+  <%= form_for(@user) do |f| %>
+    <div>
+      <%= f.attachment_field :image %>
+    </div>
+    <div>
+      <%= f.label :name,"名前" %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :like_plant,"好きな植物" %>
+      <%= f.text_field :like_plant %>
+    </div>
+    <div>
+      <%= f.label :introduction,"自己紹介" %>
+      <%= f.text_area :introduction %>
+    </div>
+    <div>
+      <%= f.submit "編集を保存する", class: "btn" %>
+    </div>
+  <% end %>
+</div>

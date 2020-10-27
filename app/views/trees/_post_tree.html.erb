@@ -1,0 +1,14 @@
+ <% trees.each do |tree| %>
+    <div>
+      <%= attachment_image_tag(tree, :image, :fill, 150, 150) %>
+    </div>
+    <div>
+      <%= tree.title %>
+      <span>本文</span>
+      <%= tree.body %>
+    </div>
+    <% if tree.user_id == current_user.id %>
+      <%= link_to "削除",plant_tree_path(tree.plant, tree),method: :delete %>
+      <%= link_to "編集",edit_plant_tree_path(tree.plant, tree) %>
+    <% end %>
+<% end %>

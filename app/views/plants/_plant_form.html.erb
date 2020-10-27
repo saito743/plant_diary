@@ -1,0 +1,22 @@
+<%= form_for(plant) do |f| %>
+  <div>
+  	<%= f.attachment_field :image %>
+  </div>
+  <div>
+  	<%= f.label :name, "品種名" %>
+  	<%= f.text_field :name %>
+  </div>
+  <div>
+  	<%= f.label :plante, "分類・学名" %>
+  	<%= f.text_field :plante %>
+  </div>
+  <div>
+    <%= f.label :difficulty, "難易度" %>
+    <%= f.number_field :difficulty %>
+  </div>
+  <div>
+  	<%= f.label :body, "本文" %>
+  	<%= f.text_area :body %>
+  </div>
+    <%= f.submit plant.new_record?? "投稿する" : "変更を保存する" %>
+<% end %>

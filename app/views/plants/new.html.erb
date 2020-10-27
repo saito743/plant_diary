@@ -1,0 +1,14 @@
+<!-- エラーメッセージ表示-->
+  <% if @plant.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= @plant.errors.count %>error prohibited this obj from being saved:</h3>
+      <ul>
+        <% @plant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h1>新規投稿</h1>
+  <%= render "plants/plant_form", plant:@plant %>

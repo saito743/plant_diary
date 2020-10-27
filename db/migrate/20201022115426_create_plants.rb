@@ -4,7 +4,7 @@ class CreatePlants < ActiveRecord::Migration[5.2]
       t.integer :user_id, null: false
       t.string :name, null: false
       t.text :body, null: false
-      t.string :image_id, null: false
+      t.string :image_id
       t.string :plante
       t.string :difficulty, null: false
       t.timestamps

@@ -1,0 +1,2 @@
+class TagMapController < ApplicationController
+end

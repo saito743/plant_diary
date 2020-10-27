@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-	belongs_to :tag_map
+	has_many :plants through: :tag_map
 end
