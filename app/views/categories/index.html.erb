@@ -9,3 +9,29 @@
   	<% end %>
   </div>
 <% end %>
+
+<div>
+  <h3><%= @category_1.name %></h3>
+  <% @plant_1.each do |plant| %>
+  <div>
+  	<%= link_to plant_path(plant) do %>
+  	  <%= attachment_image_tag(plant, :image, :fill, 200, 200) %>
+  	  <%= plant.name %>
+  	  <%= plant.body %>
+  	<% end %>
+  </div>
+<% end %>
+</div>
+
+<div>
+  <h3><%= @category_2.name %></h3>
+  <% @plant_2.each do |plant| %>
+  <div>
+    <%= link_to plant_path(plant) do %>
+      <%= attachment_image_tag(plant, :image, :fill, 200, 200) %>
+      <%= plant.name %>
+      <%= plant.body %>
+    <% end %>
+  </div>
+<% end %>
+</div>
