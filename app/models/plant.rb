@@ -40,7 +40,7 @@ class Plant < ApplicationRecord
 		end
 	end
 
-	def category_id_auto_update #カテゴリの自動割り振り（更新時）
+	def category_id_auto_update #カテゴリIDの自動割り振り（更新時）
 		if  self.difficulty == 1.to_s || self.difficulty == 2.to_s
 			self.update(category_id: 1.to_s)
 		elsif
