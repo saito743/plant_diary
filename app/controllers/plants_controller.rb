@@ -1,4 +1,16 @@
 class PlantsController < ApplicationController
+	def index
+		@plants = Plant.where(user_id: params[:user_id])
+	end
+
+	def show
+		@plant = Plant.find(params[:id])
+		@tree = Tree.new
+		@comment = Comment.new
+	end
+
+before_action :authenticate_user!
+
 	def new
 		@plant = Plant.new
 	end
@@ -12,12 +24,6 @@ class PlantsController < ApplicationController
 		else
 			render "new"
 		end
-	end
-
-	def show
-		@plant = Plant.find(params[:id])
-		@tree = Tree.new
-		@comment = Comment.new
 	end
 
 	def edit

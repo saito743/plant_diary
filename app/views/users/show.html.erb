@@ -4,13 +4,14 @@
   <% else %>
     <%= render "users/my_page", user: @user %>
   <% end %>
-</div>
-<% @plants.each do |plant| %>
-  <%= link_to plant_path(plant) do %>
-  <div>
-  	<%= attachment_image_tag(plant, :image, :fill, 200, 200) %>
-    <%= plant.name %>
-    <%= plant.body %>
-  </div>
+  <%= link_to user_followed_path(@user) do %>
+    フォロー中ユーザー：<%= @user.follower.count %>
   <% end %>
-<% end %>
+  <%= link_to user_follower_path(@user) do %>
+    フォロワー：<%= @user.followed.count %>
+  <% end %>
+</div>
+<div>
+  <%= render "plants/post_plants", plants: @plants %>
+</div>
+<%= link_to "もっと見る", user_plants_path(@user) %>

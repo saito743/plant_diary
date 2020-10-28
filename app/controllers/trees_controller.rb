@@ -1,4 +1,6 @@
 class TreesController < ApplicationController
+	before_action :authenticate_user!
+
 	def create
 		plant = Plant.find(params[:plant_id])
 		tree = Tree.new(tree_params)
