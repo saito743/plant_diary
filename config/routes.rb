@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   resources :plants do
   	resources :trees, only:[:create, :edit, :update, :destroy]
-  	resources :comments, only:[:creste, :destroy]
+  	resources :comments, only:[:create, :destroy]
   	resource :like, only:[:create, :destroy]
   end
   resources :tag, only:[:index]
