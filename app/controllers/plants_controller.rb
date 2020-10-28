@@ -6,7 +6,7 @@ class PlantsController < ApplicationController
 	def create
 		@plant = Plant.new(plant_params)
 		@plant.user_id = current_user.id
-		@plant.category_auto
+		@plant.category_auto #カテゴリ自動割り振り
 		if 	@plant.save
 			redirect_to plant_path(@plant)
 		else
@@ -17,7 +17,7 @@ class PlantsController < ApplicationController
 	def show
 		@plant = Plant.find(params[:id])
 		@tree = Tree.new
-		@trees = Tree.where(plant_id: params[:id])
+		@comment = Comment.new
 	end
 
 	def edit
@@ -28,8 +28,8 @@ class PlantsController < ApplicationController
 		@plant = Plant.find(params[:id])
 		@plant.category = Category.find_by(id: @plant.category_id)
 		if  @plant.update(plant_params)
-			@plant.category_id_auto_update
-			@plant.category_auto_update
+			@plant.category_id_auto_update	#カテゴリ自動割り振り
+			@plant.category_auto_update 	#カテゴリID自動割り振り
 			redirect_to plant_path(@plant)
 		else
 			render "edit"

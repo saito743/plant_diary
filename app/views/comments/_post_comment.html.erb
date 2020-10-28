@@ -1,0 +1,7 @@
+<% @plant.comments.each do |comment| %>
+  <div>
+  	<%= comment.user.name %>
+    <%= attachment_image_tag(comment, :comment_image, :fill, 150, 150) %>
+    <%= comment.body %>
+  </div>
+<% end %>

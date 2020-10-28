@@ -6,7 +6,7 @@
   <span>分類・学名：<%= @plant.plante %></span>
   <span>難易度：<%= @plant.difficulty %></span>
   <span>カテゴリ：<%= @plant.category.name %></span>
-  <span>カテゴリID：<%= @plant.category_id%></span>
+  <span>ユーザー名：<%= @plant.user.name %></span>
 </div>
 <div>
   <span>本文</span>
@@ -17,10 +17,20 @@
   <%= link_to "編集する", edit_plant_path(@plant),class: "btn" %>
 <!-- 日記表示 -->
 <div>
- <%= render "trees/post_tree", trees: @trees %>
+ <%= render "trees/post_tree",plant: @plant %>
 </div>
 
 <!-- 日記投稿 -->
+<div>
   <% if @plant.user_id == current_user.id %>
     <%= render "trees/new_tree", plant: @plant, tree: @tree %>
   <% end %>
+</div>
+<!-- コメント表示 -->
+<div>
+  <%= render "comments/post_comment",plant: @plant  %>
+</div>
+<!-- コメント投稿 -->
+<div>
+  <%= render "comments/new_comment",plant: @plant, comment: @comment  %>
+</div>

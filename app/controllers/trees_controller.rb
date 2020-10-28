@@ -4,8 +4,11 @@ class TreesController < ApplicationController
 		tree = Tree.new(tree_params)
 		tree.user_id = current_user.id
 		tree.plant_id = plant.id
-		tree.save
-		redirect_to request.referer
+		if  tree.save
+			redirect_to request.referer
+		else
+			render plant_path(plant)
+		end
 	end
 
 	def edit
