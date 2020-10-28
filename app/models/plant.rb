@@ -3,8 +3,8 @@ class Plant < ApplicationRecord
 	belongs_to :category, optional: true
 	has_many :tags, through: :tag_map
 	has_many :trees, dependent: :destroy
-	has_many :comments
-	has_many :likes
+	has_many :comments, dependent: :destroy
+	has_many :likes, dependent: :destroy
 
 	attachment :image
 
@@ -51,4 +51,7 @@ class Plant < ApplicationRecord
 		end
 	end
 
+	def like_by?(user)
+		likes.where(user_id: user.id).exists?
+	end
 end
