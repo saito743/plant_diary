@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+	before_action :authenticate_user!
+
 	def create
 		plant = Plant.find(params[:plant_id])
 		like = Like.new(plant_id: plant.id, user_id: current_user.id)

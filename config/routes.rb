@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update] do
   	get '/unsubscribe' => "publics#unsubscribe" #退会確認画面表示
     patch '/withdraw' => "publics#withdraw"		#ユーザー情報を退会済みに変更
-    resources :follows, only:[:create, :destroy]
+    resource :follows, only:[:create, :destroy]
   	  get "followed" =>  'follows#followed'
   	  get "follower" => 'follows#follower'
     resources :plants, only:[:index]

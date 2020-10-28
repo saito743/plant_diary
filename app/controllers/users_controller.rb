@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 		@plants = Plant.where(user_id: params[:id]).order(created_at: "DESC").limit(2)
 	end
 
+before_action :authenticate_user!
+
 	def edit
 		@user = User.find(params[:id])
 		if 	@user == current_user
