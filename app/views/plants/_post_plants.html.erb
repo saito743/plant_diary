@@ -1,0 +1,13 @@
+<% plants.each do |plant| %>
+  <%= link_to plant_path(plant) do %>
+  <div>
+  	<div>
+      <%= attachment_image_tag(plant, :image, :fill, 200, 200) %>
+    </div>
+    <div>
+      <%= plant.name %>
+      <%= plant.body %>
+    <div>
+  </div>
+  <% end %>
+<% end %>

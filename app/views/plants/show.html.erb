@@ -31,15 +31,18 @@
 
 <!-- 日記投稿 -->
 <div>
+  <h3>日記投稿</h3>
   <% if @plant.user_id == current_user.id %>
     <%= render "trees/new_tree", plant: @plant, tree: @tree %>
   <% end %>
 </div>
 <!-- コメント表示 -->
 <div>
+  <h3>コメント一覧</h3>
   <%= render "comments/post_comment",plant: @plant  %>
 </div>
 <!-- コメント投稿 -->
 <div>
+  <h3>コメント投稿</h3>
   <%= render "comments/new_comment",plant: @plant, comment: @comment  %>
 </div>

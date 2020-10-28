@@ -1,6 +1,8 @@
-<span>ユーザーページ</span>
+<h1>ユーザーページ</h1>
   <div>
   	<%= attachment_image_tag(@user, :image, :fill, 300, 300, fallback: "no_image.jpg") %>
+  </div>
+  <div>
     <span><%= user.name %></span>
     <span>自己紹介</span>
       <%= user.introduction %>

@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     resources :follows, only:[:create, :destroy]
   	  get "followed" =>  'follows#followed'
   	  get "follower" => 'follows#follower'
+    resources :plants, only:[:index]
   end
-  resources :plants do
+  resources :plants, only:[:new, :create, :show, :edit, :update, :destroy] do
   	resources :trees, only:[:create, :edit, :update, :destroy]
   	resources :comments, only:[:create, :destroy]
   	resource :like, only:[:create, :destroy]
