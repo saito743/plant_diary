@@ -20,7 +20,7 @@ before_action :authenticate_user!
 	def create
 		@plant = current_user.plants.new(plant_params)
 		@plant.category_auto #カテゴリ自動割り振り
-		tag_list = params[:plant][:tag_name].split(nil)
+		tag_list = params[:plant][:tag_name].split(/[,|、]/) #タグ保存
 		if 	@plant.save
 			@plant.save_tag(tag_list)
 			redirect_to plant_path(@plant)
@@ -31,14 +31,19 @@ before_action :authenticate_user!
 
 	def edit
 		@plant = Plant.find(params[:id])
-	end
+		plant_tags = @plant.tags
+		@tag_list = plant_tags.pluck(:tag_name).join(",")
+    end
+
 
 	def update
 		@plant = Plant.find(params[:id])
 		@plant.category = Category.find_by(id: @plant.category_id)
+		tag_list = params[:plant][:tag_name].split(/[,|、]/)
 		if  @plant.update(plant_params)
 			@plant.category_id_auto_update	#カテゴリ自動割り振り
 			@plant.category_auto_update 	#カテゴリID自動割り振り
+			@plant.save_tag(tag_list)
 			redirect_to plant_path(@plant)
 		else
 			render "edit"
