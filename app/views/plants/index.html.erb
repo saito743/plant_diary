@@ -1,4 +1,9 @@
 <h1>今まで育てた植物一覧</h1>
 <div>
+  <% @tag_list.each do |tag| %>
+    <%= tag.tag_name %>
+  <% end %>
+</div>
+<div>
   <%= render "plants/post_plants", plants: @plants %>
 </div>
