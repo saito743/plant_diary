@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   end
   resources :tag, only:[:index]
   resources :categories, only:[:index]
+  resources :tags, only:[:index]
   resources :help, only:[:index]
 end

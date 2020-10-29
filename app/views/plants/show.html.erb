@@ -8,7 +8,9 @@
   <span>カテゴリ：<%= @plant.category.name %></span>
   <span>タグ：
     <% @plant_tags.each do |plant| %>
-      <%= plant.tag_name %>
+      <%= link_to tags_path(tag_id: plant.id) do %>
+        <%= plant.tag_name %>
+      <% end %>
     <% end %>
   </span>
   <span>ユーザー名：<%= @plant.user.name %></span>
