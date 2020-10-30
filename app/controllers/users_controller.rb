@@ -23,8 +23,20 @@ before_action :authenticate_user!
 		else render "edit"
 		end
 	end
+
+	def unsubscribe
+		@user = User.find_by(params[:id])
+	end
+
+	def withdraw
+		binding.pry
+		@user = current_user
+		@user.update(is_deleted: true)
+		reset_session
+    	redirect_to root_path
+	end
 private
 	def user_params
-	  params.require(:user).permit(:name,:introduction,:like_plant, :email, :image, :is_active)
+	  params.require(:user).permit(:name,:introduction,:like_plant, :email, :image, :is_deleted)
 	end
 end

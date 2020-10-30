@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :introduction
       t.string :like_plant
-      t.boolean :is_active, default: true
+      t.boolean :is_deleted, default: false
       t.timestamps null: false
     end
 
