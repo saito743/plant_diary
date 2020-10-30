@@ -1,5 +1,10 @@
 class TreesController < ApplicationController
-	before_action :authenticate_user!
+
+	def help
+		@trees = Tree.where(ask_for_help: true)
+	end
+
+before_action :authenticate_user!
 
 	def create
 		plant = Plant.find(params[:plant_id])
@@ -32,6 +37,6 @@ class TreesController < ApplicationController
 	end
 private
 	def tree_params
-		params.require(:tree).permit(:title, :body, :image, :plant_id)
+		params.require(:tree).permit(:title, :body, :image, :plant_id, :ask_for_help)
 	end
 end

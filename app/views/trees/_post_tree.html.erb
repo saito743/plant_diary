@@ -4,6 +4,11 @@
     </div>
     <div>
       <%= tree.title %>
+      <% if tree.ask_for_help == true %>
+        <span>Help!</span>
+      <% end %>
+    </div>
+    <div>
       <span>本文</span>
       <%= tree.body %>
     </div>

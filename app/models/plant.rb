@@ -43,22 +43,11 @@ class Plant < ApplicationRecord
 		end
 	end
 
-	def category_id_auto_update #カテゴリIDの自動割り振り（更新時）
-		if  self.difficulty == 1.to_s || self.difficulty == 2.to_s
-			self.update(category_id: 1.to_s)
-		elsif
-			self.difficulty == 3.to_s || self.difficulty == 4.to_s
-			self.update(category_id: 2.to_s)
-		else
-			self.update(category_id: 3.to_s)
-		end
-	end
-
 	def like_by?(user) #ブックマークに登録していればtrue
 		likes.where(user_id: user.id).exists?
 	end
 
-	def save_tag(sent_tags)
+	def save_tag(sent_tags)  #タグの保存
 		current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?   	#保存されているタグを取り出す
 			old_tags = current_tags - sent_tags		#重複しているタグ
 			new_tags = sent_tags - current_tags		#新規で登録されたタグ

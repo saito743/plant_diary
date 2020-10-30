@@ -6,6 +6,7 @@ class CreateTrees < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.string :body, null: false
       t.string :image_id, null: false
+      t.boolean :ask_for_help, default: :false
       t.timestamps
     end
   end
