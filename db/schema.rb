@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_10_25_112443) do
   end
 
   create_table "helps", force: :cascade do |t|
-    t.integer "plant_id", null: false
+    t.integer "tree_id", null: false
     t.boolean "is_active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
