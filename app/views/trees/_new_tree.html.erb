@@ -11,6 +11,10 @@
       <%= f.label :body,"本文" %>
       <%= f.text_field :body %>
     </div>
+    <div>
+      <%= f.label :ask_for_help, "Help" %>
+      <%= f.check_box :ask_for_help, {} , true, false %>
+    </div>
       <%= f.submit "投稿する" %>
   <% end %>
 </div>

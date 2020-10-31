@@ -34,13 +34,6 @@ ActiveRecord::Schema.define(version: 2020_10_25_112443) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "helps", force: :cascade do |t|
-    t.integer "plant_id", null: false
-    t.boolean "is_active", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "plant_id", null: false
@@ -80,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_10_25_112443) do
     t.string "title", null: false
     t.string "body", null: false
     t.string "image_id", null: false
+    t.boolean "ask_for_help", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,7 +88,7 @@ ActiveRecord::Schema.define(version: 2020_10_25_112443) do
     t.string "name"
     t.text "introduction"
     t.string "like_plant"
-    t.boolean "is_active", default: true
+    t.boolean "is_deleted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

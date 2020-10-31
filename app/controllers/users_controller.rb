@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@plants = Plant.where(user_id: params[:id]).order(created_at: "DESC").limit(2)
+		user_like = @user.likes.pluck(:plant_id)
+		@user_like_plants = Plant.where(id: user_like)
 	end
 
 before_action :authenticate_user!
@@ -21,8 +23,20 @@ before_action :authenticate_user!
 		else render "edit"
 		end
 	end
+
+	def unsubscribe
+		@user = User.find_by(params[:id])
+	end
+
+	def withdraw
+		binding.pry
+		@user = current_user
+		@user.update(is_deleted: true)
+		reset_session
+    	redirect_to root_path
+	end
 private
 	def user_params
-	  params.require(:user).permit(:name,:introduction,:like_plant, :email, :image, :is_active)
+	  params.require(:user).permit(:name,:introduction,:like_plant, :email, :image, :is_deleted)
 	end
 end

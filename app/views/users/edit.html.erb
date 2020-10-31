@@ -20,4 +20,6 @@
       <%= f.submit "編集を保存する", class: "btn" %>
     </div>
   <% end %>
+  <%= link_to "ログイン情報を変更する", edit_user_registration_path %>
+  <%= link_to "退会する",user_unsubscribe_path(@user) %>
 </div>

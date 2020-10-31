@@ -15,3 +15,7 @@
   <%= render "plants/post_plants", plants: @plants %>
 </div>
 <%= link_to "もっと見る", user_plants_path(@user) %>
+<h2>いいね一覧</h2>
+<div>
+  <%= render "plants/post_plants", plants: @user_like_plants %>
+</div>

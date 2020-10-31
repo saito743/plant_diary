@@ -1,0 +1,16 @@
+<h1>Help!一覧</h1>
+<div>
+  <% @trees.each do |tree| %>
+  <%= link_to plant_path(tree.plant) do %>
+  <div>
+  	<div>
+      <%= attachment_image_tag(tree, :image, :fill, 200, 200) %>
+    </div>
+    <div>
+      <%= tree.title %>
+      <%= tree.body %>
+    <div>
+  </div>
+  <% end %>
+<% end %>
+</div>

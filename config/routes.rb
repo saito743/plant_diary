@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#top'
   resources :users, only:[:show, :edit, :update] do
-  	get '/unsubscribe' => "publics#unsubscribe" #退会確認画面表示
-    patch '/withdraw' => "publics#withdraw"		#ユーザー情報を退会済みに変更
+  	  get '/unsubscribe' => "users#unsubscribe" #退会確認画面表示
+      patch '/withdraw' => "users#withdraw"		#ユーザー情報を退会済みに変更
     resource :follows, only:[:create, :destroy]
   	  get "followed" =>  'follows#followed'
   	  get "follower" => 'follows#follower'
@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   resources :tag, only:[:index]
   resources :categories, only:[:index]
   resources :tags, only:[:index]
-  resources :help, only:[:index]
+  get '/help' => "trees#help"
 end
