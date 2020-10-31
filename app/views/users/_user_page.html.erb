@@ -7,9 +7,7 @@
     <span>自己紹介</span>
       <%= user.introduction %>
     <span>好きな植物</span><%= user.like_plant %>
-    <% if current_user.following?(user) %>
-      <%= link_to "フォロー解除", user_follows_path(user),method: :delete %>
-    <% else %>
-      <%= link_to "フォローする", user_follows_path(user),method: :post %>
-    <% end %>
+    <div class="follow_btn">
+      <%= render "follows/follow_btn", user: @user %>
+    </div>
   </div>
