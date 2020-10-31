@@ -1,6 +1,8 @@
 <%= form_for(plant) do |f| %>
-  <div>
-  	<%= f.attachment_field :image %>
+  <div class="img-prv">
+    <%= image_tag "no_image.jpg",size:'300x300',id: "img_prev" %>
+  	<%= f.attachment_field :image, id: "post_img" %>
+    <%= javascript_include_tag 'img-prev' %>
   </div>
   <div>
   	<%= f.label :name, "品種名" %>

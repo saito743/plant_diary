@@ -1,0 +1,9 @@
+<% if plant.like_by?(current_user) %>
+  <%= link_to plant_like_path(plant),class: "fas fa-heart", method: :delete do %>
+    <%= plant.likes.count %>
+  <% end %>
+<% else %>
+  <%= link_to plant_like_path(plant),class: "far fa-heart", method: :post do %>
+    <%= plant.likes.count %>
+  <% end %>
+<% end %>
