@@ -27,7 +27,9 @@
 
 <div>
   <h3>日記</h3>
-  <%= render "trees/post_tree",plant: @plant %>
+  <div>
+    <%= render "trees/post_tree",plant: @plant %>
+  </div>
 </div>
 
 
@@ -40,10 +42,12 @@
 
 <div>
   <h3>コメント一覧</h3>
-  <%= render "comments/post_comment",plant: @plant  %>
+  <div class="post_comment">
+    <%= render "comments/post_comment",plant: @plant  %>
+  </div>
 </div>
 
 <div>
   <h3>コメント投稿</h3>
-  <%= render "comments/new_comment",plant: @plant, comment: @comment  %>
+    <%= render "comments/new_comment",plant: @plant, comment: @comment  %>
 </div>
