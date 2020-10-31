@@ -1,7 +1,10 @@
 class Plant < ApplicationRecord
 	belongs_to :user
 	belongs_to :category, optional: true
-	has_many :tags, through: :tag_map
+
+	has_many :tag_maps, dependent: :destroy, foreign_key: 'plant_id'
+	has_many :tags, through: :tag_maps
+
 	has_many :trees, dependent: :destroy
 	has_many :comments, dependent: :destroy
 	has_many :likes, dependent: :destroy
@@ -51,7 +54,23 @@ class Plant < ApplicationRecord
 		end
 	end
 
-	def like_by?(user)
+	def like_by?(user) #ブックマークに登録していればtrue
 		likes.where(user_id: user.id).exists?
 	end
+
+	def save_tag(sent_tags)
+		current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?   	#保存されているタグを取り出す
+			old_tags = current_tags - sent_tags		#重複しているタグ
+			new_tags = sent_tags - current_tags		#新規で登録されたタグ
+
+			old_tags.each do |old|
+				self.tags.delete Tag.find_by(tag_name: old)	#古いタグを削除する（編集時に必要）
+			end
+
+			new_tags.each do |new|
+				new_plant_tag = Tag.find_or_create_by(tag_name: new)	#新しいタグを保存
+				self.tags << new_plant_tag
+			end
+	end
+
 end

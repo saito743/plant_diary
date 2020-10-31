@@ -6,6 +6,13 @@
   <span>分類・学名：<%= @plant.plante %></span>
   <span>難易度：<%= @plant.difficulty %></span>
   <span>カテゴリ：<%= @plant.category.name %></span>
+  <span>タグ：
+    <% @plant_tags.each do |plant| %>
+      <%= link_to tags_path(tag_id: plant.id) do %>
+        <%= plant.tag_name %>
+      <% end %>
+    <% end %>
+  </span>
   <span>ユーザー名：<%= @plant.user.name %></span>
   <% if @plant.like_by?(current_user) %>
     <%= link_to plant_like_path(@plant),class: "fas fa-heart", method: :delete do %>

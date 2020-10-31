@@ -15,6 +15,10 @@
     <%= f.number_field :difficulty %>
   </div>
   <div>
+    <%= f.label :tag_name, "タグ" %>
+    <%= f.text_field :tag_name, value: tag_list %>
+  </div>
+  <div>
   	<%= f.label :body, "本文" %>
   	<%= f.text_area :body %>
   </div>
