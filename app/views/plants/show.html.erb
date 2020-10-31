@@ -27,14 +27,13 @@
 
 <div>
   <h3>日記</h3>
-  <div>
+  <div class="post_tree">
     <%= render "trees/post_tree",plant: @plant %>
   </div>
 </div>
 
-
+<!-- 日記投稿 -->
 <div>
-  <h3>日記投稿</h3>
   <% if @plant.user_id == current_user.id %>
     <%= render "trees/new_tree", plant: @plant, tree: @tree %>
   <% end %>
