@@ -49,7 +49,10 @@ before_action :authenticate_user!
 		end
 	end
 
-	def delete
+	def destroy
+		Plant.find(params[:id]).destroy
+		@user = User.find_by(id: current_user.id)
+		redirect_to user_path(@user)
 	end
 private
 	def plant_params

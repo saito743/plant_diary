@@ -12,9 +12,19 @@
   	<%= f.label :plante, "分類・学名" %>
   	<%= f.text_field :plante %>
   </div>
-  <div>
+  <div id="star">
     <%= f.label :difficulty, "難易度" %>
-    <%= f.number_field :difficulty %>
+    <%= f.hidden_field :difficulty %>
+    <%= javascript_include_tag 'jquery.raty.js' %>
+    <script>
+      $("#star").raty({
+        score: 1,
+        size  :36,
+        starOff: "<%= asset_path('star-off.png') %>",
+          starOn : "<%= asset_path('star-on.png') %>",
+          scoreName: "plant[difficulty]"
+       });
+    </script>
   </div>
   <div>
     <%= f.label :tag_name, "タグ" %>

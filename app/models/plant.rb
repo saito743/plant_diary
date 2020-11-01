@@ -15,7 +15,6 @@ class Plant < ApplicationRecord
 					 length: { maximum:30 }
 	validates :body, presence: true,
 					 length: { maximum:300 }
-	validates :image_id, presence: true
 	validates :plante, length: { maximum:30 }
 	validates :difficulty, numericality: {
 				greater_than_or_equal_to: 1,

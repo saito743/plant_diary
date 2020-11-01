@@ -11,6 +11,9 @@ ja:
       user: "ユーザ"
   devise:
     confirmations:
+      failure:
+        already_authenticated: 'すでにログインしています。'
+        inactive: "退会済みアカウントです　別のメールアドレスで新規登録してください"
       new:
         resend_confirmation_instructions: "アカウント確認メール再送"
     mailer:
@@ -53,6 +56,7 @@ ja:
     sessions:
       new:
         sign_in: "ログイン"
+        your_account_is_not_activated_yet.: "退会済みアカウントです　別のメールアドレスで新規登録してください"
     shared:
       links:
         back: "戻る"
