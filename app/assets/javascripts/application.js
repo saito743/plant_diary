@@ -14,5 +14,7 @@
 //= require activestorage
 // require_tree .
 //= require jquery3
+//= require jquery
+//= require jquery.raty
 //= require popper
 //= require bootstrap-sprockets

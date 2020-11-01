@@ -4,7 +4,17 @@
 </div>
 <div>
   分類・学名：<%= @plant.plante %><br>
-  難易度：<%= @plant.difficulty %><br>
+  難易度：<div class="star"></div>
+  <script>
+    $(".star").raty({
+      score: 1,
+      size  :36,
+      starOff: "<%= asset_path('star-off.png') %>",
+      starOn : "<%= asset_path('star-on.png') %>",
+      readOnly: true,
+      score: <%= @plant.difficulty %>,
+     });
+  </script>
   カテゴリ：<%= @plant.category.name %><br>
   タグ：
     <% @plant_tags.each do |plant| %>
@@ -13,9 +23,6 @@
       <% end %>
     <% end %><br>
   ユーザー名：<%= @plant.user.name %><br>
-  <div class="like-btn">
-    <%= render "likes/like_btn",plant: @plant %>
-  </div>
 </div>
 <div>
   <span>本文</span>
@@ -23,8 +30,14 @@
 </div>
 <div>
   <%= @plant.updated_at %>
-  <%= link_to "編集する", edit_plant_path(@plant),class: "btn" %>
-
+  <div class="like-btn">
+    <% if @plant.user_id == current_user.id %>
+      <%= link_to "編集する", edit_plant_path(@plant),class: "btn" %>
+      <%= link_to "削除する", plant_path(@plant), method: :delete %>
+    <% else %>
+      <%= render "likes/like_btn",plant: @plant %>
+    <% end %>
+  </div>
 <div>
   <h3>日記</h3>
   <div class="post_tree">
@@ -33,6 +46,7 @@
 </div>
 
 <!-- 日記投稿 -->
+<div class="tree_error_msg"></div>
 <div>
   <% if @plant.user_id == current_user.id %>
     <%= render "trees/new_tree", plant: @plant, tree: @tree %>
@@ -48,5 +62,6 @@
 
 <div>
   <h3>コメント投稿</h3>
+  <div class="comment_error_msg"></div>
     <%= render "comments/new_comment",plant: @plant, comment: @comment  %>
 </div>

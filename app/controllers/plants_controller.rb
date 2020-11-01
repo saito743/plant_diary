@@ -4,13 +4,6 @@ class PlantsController < ApplicationController
 		@tag_list = Tag.all
 	end
 
-	def show
-		@plant = Plant.find(params[:id])
-		@plant_tags = @plant.tags
-		@tree = Tree.new
-		@comment = Comment.new
-	end
-
 before_action :authenticate_user!
 
 	def new
@@ -27,6 +20,13 @@ before_action :authenticate_user!
 		else
 			render "new"
 		end
+	end
+
+	def show
+		@plant = Plant.find_by(params[:id])
+		@plant_tags = @plant.tags
+		@tree = Tree.new
+		@comment = Comment.new
 	end
 
 	def edit
@@ -49,7 +49,10 @@ before_action :authenticate_user!
 		end
 	end
 
-	def delete
+	def destroy
+		Plant.find(params[:id]).destroy
+		@user = User.find_by(id: current_user.id)
+		redirect_to user_path(@user)
 	end
 private
 	def plant_params

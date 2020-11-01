@@ -1,4 +1,5 @@
 $(".commnt_body").val("");
 $("#com_post_img").val("");
-$('#com_img_prev').attr('src', "<%= asset_path('no_image.jpg') %>");　// srcの内容をno_imageに書き換え //
-$('.post_comment').html("<%= j(render 'comments/post_comment',plant: @plant) %>");
+$("#com_img_prev").attr('src', "<%= asset_path('no_image.jpg') %>");　// srcの内容をno_imageに書き換え //
+$(".post_comment").html("<%= j(render 'comments/post_comment',plant: @plant) %>");
+$(".comment_error_msg").html("<%= j(render 'layouts/error_msg',model: @comment) %>")

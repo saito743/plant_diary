@@ -8,6 +8,16 @@
       <%= plant.name %>
       <%= plant.body %>
     <div>
+    <div class="star-<%= plant.id %>"></div>
+      <script>
+        $(".star-<%= plant.id %>").raty({
+          size  :36,
+          starOff: "<%= asset_path('star-off.png') %>",
+          starOn : "<%= asset_path('star-on.png') %>",
+          readOnly: true,
+          score: <%= plant.difficulty %>,
+         });
+      </script>
   </div>
   <% end %>
 <% end %>
