@@ -1,15 +1,18 @@
+<h3>日記投稿</h3>
 <div>
-  <%= form_for [plant, tree] do |f| %>
-    <div>
-		  <%= f.attachment_field :image %>
+  <%= form_with(model:[plant, tree]) do |f| %>
+    <div class="img-prv">
+      <%= image_tag "no_image.jpg",size:'200x200',id: "img_prev" %>
+		  <%= f.attachment_field :image, id: "post_img" %>
+      <%= javascript_include_tag 'img-prev' %>
     </div>
     <div>
       <%= f.label :title,"タイトル" %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: "tree_title" %>
     </div>
     <div>
       <%= f.label :body,"本文" %>
-      <%= f.text_field :body %>
+      <%= f.text_field :body, class: "tree_body" %>
     </div>
     <div>
       <%= f.label :ask_for_help, "Help" %>

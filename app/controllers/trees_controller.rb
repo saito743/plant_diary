@@ -7,15 +7,11 @@ class TreesController < ApplicationController
 before_action :authenticate_user!
 
 	def create
-		plant = Plant.find(params[:plant_id])
-		tree = Tree.new(tree_params)
-		tree.user_id = current_user.id
-		tree.plant_id = plant.id
-		if  tree.save
-			redirect_to request.referer
-		else
-			render plant_path(plant)
-		end
+		@plant = Plant.find(params[:plant_id])
+		@tree = Tree.new(tree_params)
+		@tree.user_id = current_user.id
+		@tree.plant_id = @plant.id
+		@tree.save
 	end
 
 	def edit

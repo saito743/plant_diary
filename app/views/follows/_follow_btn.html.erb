@@ -1,0 +1,13 @@
+<% if current_user.following?(user) %>
+  <%= link_to "フォロー解除", user_follows_path(user),remote: true, method: :delete %>
+<% else %>
+  <%= link_to "フォローする", user_follows_path(user),remote: true, method: :post %>
+<% end %>
+<div>
+  <%= link_to user_followed_path(@user) do %>
+    フォロー中ユーザー：<%= @user.follower.count %>
+  <% end %>
+  <%= link_to user_follower_path(@user) do %>
+    フォロワー：<%= @user.followed.count %>
+  <% end %>
+</div>

@@ -1,7 +1,9 @@
-<%= form_for [plant, comment] do |f| %>
-  <div>
-    <%= f.attachment_field :comment_image %>
-    <%= f.text_area :body %>
-  </div>
+<%= form_with(model:[plant, comment]) do |f| %>
+  	<div class="img-prv">
+      <%= image_tag "no_image.jpg",size:'200x200',id: "com_img_prev" %>
+      <%= f.attachment_field :comment_image, id: "com_post_img" %>
+      <%= javascript_include_tag 'com-img-prev' %>
+    </div>
+    <%= f.text_area :body, class:"commnt_body" %>
     <%= f.submit "コメントする" %>
 <% end %>

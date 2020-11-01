@@ -9,3 +9,9 @@
     <span>好きな植物：<%= user.like_plant %></span><br>
     <%= link_to "編集",edit_user_path(user) %>
   </div>
+  <%= link_to user_followed_path(@user) do %>
+    フォロー中ユーザー：<%= @user.follower.count %>
+  <% end %>
+  <%= link_to user_follower_path(@user) do %>
+    フォロワー：<%= @user.followed.count %>
+  <% end %>

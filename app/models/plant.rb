@@ -2,7 +2,7 @@ class Plant < ApplicationRecord
 	belongs_to :user
 	belongs_to :category, optional: true
 
-	has_many :tag_maps, dependent: :destroy, foreign_key: 'plant_id'
+	has_many :tag_maps, dependent: :destroy
 	has_many :tags, through: :tag_maps
 
 	has_many :trees, dependent: :destroy

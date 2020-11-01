@@ -1,0 +1,5 @@
+$(".tree_title").val("");
+$(".tree_body").val("");
+$("#post_img").val("");
+$("#img_prev").attr('src',"<%= asset_path('no_image.jpg') %>")
+$(".post_tree").html("<%= j(render 'trees/post_tree',plant: @plant) %>")
