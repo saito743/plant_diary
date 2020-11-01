@@ -11,12 +11,15 @@ class Plant < ApplicationRecord
 
 	attachment :image
 
-	validates :name, length: { in: 2..20 }
-	validates :body,length: { maximum:300 }
+	validates :name, presence: true,
+					 length: { maximum:30 }
+	validates :body, presence: true,
+					 length: { maximum:300 }
+	validates :image_id, presence: true
+	validates :plante, length: { maximum:30 }
 	validates :difficulty, numericality: {
 				greater_than_or_equal_to: 1,
-				less_than_or_equal_to: 5},
-				presence: true
+				less_than_or_equal_to: 5}
 
 	def category_auto #カテゴリの自動割り振り（新規投稿時）
 		if  self.difficulty == 1.to_s || self.difficulty == 2.to_s

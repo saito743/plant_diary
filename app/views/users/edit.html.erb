@@ -1,4 +1,7 @@
 <h1>プロフィール編集</h1>
+<div class="error_msg">
+  <%= render "layouts/error_msg", model: @user %>
+</div>
 <div>
   <%= form_for(@user) do |f| %>
     <div class="img-prv">

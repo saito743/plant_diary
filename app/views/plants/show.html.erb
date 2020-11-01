@@ -33,6 +33,7 @@
 </div>
 
 <!-- 日記投稿 -->
+<div class="tree_error_msg"></div>
 <div>
   <% if @plant.user_id == current_user.id %>
     <%= render "trees/new_tree", plant: @plant, tree: @tree %>
@@ -48,5 +49,6 @@
 
 <div>
   <h3>コメント投稿</h3>
+  <div class="comment_error_msg"></div>
     <%= render "comments/new_comment",plant: @plant, comment: @comment  %>
 </div>

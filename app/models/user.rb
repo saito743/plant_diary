@@ -13,9 +13,12 @@ class User < ApplicationRecord
   has_many :follower, class_name:"Follow", foreign_key:"follower_id",dependent: :destroy  #フォロワー取得
   has_many :followed_user, through: :follower, source: :followed    #自分がフォローしてるユーザー
   has_many :following_user, through: :followed, source: :follower   #自分のことをフォローしてるユーザー
+
   validates_uniqueness_of :email  #メールアドレスの重複防止
+
   validates :name, length: { in: 2..10 }
   validates :introduction, length: { maximum: 200 }
+  validates :like_plant, length: { maximum: 20 }
 
   attachment :image
 
@@ -31,7 +34,7 @@ class User < ApplicationRecord
     follower.find_by(followed_id: user_id).destroy
   end
 
-  def active_for_authentication?
+  def active_for_authentication? #退会済みユーザーのログイン防止
     super && (self.is_deleted === false)
   end
 end
