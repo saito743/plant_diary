@@ -1,8 +1,8 @@
 <div>
-  <% if @user != current_user %>
-    <%= render "users/user_page",user: @user %>
-  <% else %>
+  <% if @user.id == current_user.id %>
     <%= render "users/my_page", user: @user %>
+  <% else %>
+    <%= render "users/user_page",user: @user %>
   <% end %>
 </div>
 <div>
@@ -12,4 +12,8 @@
 <h2>いいね一覧</h2>
 <div>
   <%= render "plants/post_plants", plants: @user_like_plants %>
+</div>
+<h2>フォロー中ユーザーの投稿</h2>
+<div>
+  <%= render "plants/followed_user_post", plants: @followed_users_plant %>
 </div>

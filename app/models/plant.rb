@@ -63,5 +63,4 @@ class Plant < ApplicationRecord
 				self.tags << new_plant_tag
 			end
 	end
-
 end
