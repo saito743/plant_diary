@@ -12,11 +12,19 @@
 
   <body>
     <header>
-      <% if user_signed_in? %>
-        <%= render "layouts/after_login" %>
-      <% else %>
-        <%= render "layouts/before_login" %>
-      <% end %>
+      <div class="sp-menu">
+        <% if user_signed_in? %>
+          <%= render "layouts/after_login" %>
+        <% else %>
+          <%= render "layouts/before_login" %>
+        <% end %>
+      </div>
+      <div class="hm-icon">
+        <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
     </header>
     <%= render 'layouts/notifications' %>
     <%= yield %>

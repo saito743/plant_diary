@@ -18,3 +18,11 @@
 //= require jquery.raty
 //= require popper
 //= require bootstrap-sprockets
+
+$(function(){
+  $('.menu-trigger').on('click',function(event){
+  	$(this).toggleClass('active');
+  	$('.sp-menu').fadeToggle();
+  	event.preventDefalt();
+  });
+});
