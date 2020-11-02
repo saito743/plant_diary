@@ -41,7 +41,7 @@ before_action :authenticate_user!
 		@plant.category = Category.find_by(id: @plant.category_id)
 		tag_list = params[:plant][:tag_name].split(/[,|、]/) #タグ保存、読点は半角・全角どちらでも可
 		if  @plant.update(plant_params)
-			@plant.category_id_auto_update	#カテゴリ自動割り振り
+			@plant.category_auto_update	#カテゴリ自動割り振り
 			@plant.save_tag(tag_list)
 			redirect_to plant_path(@plant)
 		else
