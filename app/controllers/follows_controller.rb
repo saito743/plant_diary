@@ -3,24 +3,26 @@ class FollowsController < ApplicationController
 
 	def create
 		current_user.follow(params[:user_id])
-		@user = User.find_by(params[:id])
-		@users = @user.following_user
+		@user = User.find_by(id: params[:user_id])
+		@following_users = @user.following_user
+		@followed_users = @user.followed_user
 	end
 
 	def destroy
-		@user = User.find(params[:user_id])
-		@users = @user.following_user
+		@user = User.find_by(id: params[:user_id])
+		@following_users = @user.following_user
+		@followed_users = @user.followed_user
 		current_user.unfollow(params[:user_id])
 	end
 
 	def follower
 		user = User.find(params[:user_id])
-		@users = user.following_user
+		@following_users = user.following_user
 	end
 
 	def followed
 		user = User.find(params[:user_id])
-		@users = user.followed_user
+		@followed_users = user.followed_user
 	end
 private
 	def follow_params

@@ -1,0 +1,15 @@
+<% users.each do |user| %>
+  <%= link_to user_path(user) do %>
+    <div>
+      <%= attachment_image_tag(@user, :image, :fill, 300, 300, fallback: "no_image.jpg") %>
+      <%= user.name %>
+      <div>
+        <% if current_user.following?(user) %>
+  		    <%= link_to "フォロー解除", user_follows_path(@user),remote: true, method: :delete %>
+  	    <% else %>
+  		   <%= link_to "フォローする", user_follows_path(@user),remote: true, method: :post %>
+  	    <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

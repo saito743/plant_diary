@@ -1,2 +1,4 @@
+$(".following_list").html("<%= j( render 'follows/follow_user_index', users: @following_users ) %>");
+$(".followed_list").html("<%= j( render 'follows/follow_user_index', users: @followed_users ) %>");
 $(".follow_btn").html("<%= j(render 'follows/follow_btn', user: @user) %>");
-$(".follow_list").html("<%= j( render 'follows/user_index', users: @users ) %>");
+$(".follow_user_count").html("<%= j(render 'follows/follow_user_count', user: @user) %>");

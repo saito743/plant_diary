@@ -37,6 +37,7 @@ before_action :authenticate_user!
 		reset_session
     	redirect_to root_path
 	end
+
 private
 	def user_params
 	  params.require(:user).permit(:name,:introduction,:like_plant, :email, :image, :is_deleted)
