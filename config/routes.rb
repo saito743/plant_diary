@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :categories, only:[:index]
   resources :tags, only:[:index]
   get '/help' => "trees#help"
+  get '/search' => 'search#search'
 end

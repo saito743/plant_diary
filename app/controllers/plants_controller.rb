@@ -23,7 +23,7 @@ before_action :authenticate_user!
 	end
 
 	def show
-		@plant = Plant.find_by(params[:id])
+		@plant = Plant.find_by(id: params[:id])
 		@plant_tags = @plant.tags
 		@tree = Tree.new
 		@comment = Comment.new

@@ -5,16 +5,16 @@
 <div>
   分類・学名：<%= @plant.plante %><br>
   難易度：<div class="star"></div>
-  <script>
-    $(".star").raty({
-      score: 1,
-      size  :36,
-      starOff: "<%= asset_path('star-off.png') %>",
-      starOn : "<%= asset_path('star-on.png') %>",
-      readOnly: true,
-      score: <%= @plant.difficulty %>,
-     });
-  </script>
+    <script>
+      $(".star").raty({
+        score: 1,
+        size  :36,
+        starOff: "<%= asset_path('star-off.png') %>",
+        starOn : "<%= asset_path('star-on.png') %>",
+        readOnly: true,
+        score: <%= @plant.difficulty %>,
+       });
+    </script>
   カテゴリ：<%= @plant.category.name %><br>
   タグ：
     <% @plant_tags.each do |plant| %>
@@ -32,6 +32,7 @@
   <%= @plant.updated_at %>
   <div class="like-btn">
     <% if @plant.user_id == current_user.id %>
+      <span class="fas fa-heart"><%= @plant.likes.count %></span>
       <%= link_to "編集する", edit_plant_path(@plant),class: "btn" %>
       <%= link_to "削除する", plant_path(@plant), method: :delete %>
     <% else %>

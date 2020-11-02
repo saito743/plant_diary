@@ -8,9 +8,9 @@
       <%= plant.name %>
       <%= plant.body %>
     <div>
-    <div id="star-<%= plant.id %>"></div>
+    <div class="follow-user-star-<%= plant.id %>"></div>
       <script>
-        $("#star-<%= plant.id %>").raty({
+        $(".follow-user-star-<%= plant.id %>").raty({
           size  :36,
           starOff: "<%= asset_path('star-off.png') %>",
           starOn : "<%= asset_path('star-on.png') %>",
