@@ -12,6 +12,19 @@
 
   <body>
     <header>
+      <div class="text-right">
+        <%= form_tag(search_path, method: :get) do %>
+          <%= text_field_tag 'search[content]', '', placeholder: "Search" %>
+        <% end %>
+      </div>
+
+      <div class="hm-icon">
+        <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
       <div class="sp-menu">
         <% if user_signed_in? %>
           <%= render "layouts/after_login" %>
@@ -19,12 +32,6 @@
           <%= render "layouts/before_login" %>
         <% end %>
       </div>
-      <div class="hm-icon">
-        <a class="menu-trigger" href="#">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
     </header>
     <%= render 'layouts/notifications' %>
     <%= yield %>
