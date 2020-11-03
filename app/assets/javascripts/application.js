@@ -15,14 +15,26 @@
 // require_tree .
 //= require jquery3
 //= require jquery
+//= require rails-ujs
 //= require jquery.raty
 //= require popper
 //= require bootstrap-sprockets
 
+//　ハンバーガーメニュー
 $(function(){
   $('.menu-trigger').on('click',function(event){
   	$(this).toggleClass('active');
   	$('.sp-menu').fadeToggle();
-  	event.preventDefalt();
+  	event.preventDefault();
+  });
+});
+//トップページ　スライド
+$(function() {
+  $('.main-visual').slick({
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    fade: true,
+    infinite: true,
   });
 });
