@@ -183,10 +183,12 @@ footer {
 }
 .about{
 	padding: 20px;
-	background-color: #f0f6da;
 }
 .about-item{
 	height: 200px;
+}
+.about-item:nth-of-type(odd){
+	background-color: #f0f6da;
 }
 .about-title{
 	font-size: x-large;
