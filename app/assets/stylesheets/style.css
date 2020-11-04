@@ -3,7 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-p, a, span, h2{
+p, a, span,label,input, h2{
 	color: #2e3740;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 }
@@ -11,6 +11,15 @@ p, a, span, h2{
 header,
 footer {
 	background-color: #c3d825;
+}
+header{
+	position: fixed;
+    top: 0;
+	z-index: 99;
+	width: 100%;
+}
+.main{
+	padding-top: 80px;
 }
 .flex-header {
 	display: flex;
@@ -155,7 +164,7 @@ footer {
 	min-height: 600px;
 }
 /* topページ */
-.main{
+.top-main{
 	height: 630px;
 }
 .main-visual{
@@ -185,17 +194,37 @@ footer {
 	padding: 20px;
 }
 .about-item{
-	height: 200px;
+	padding-top: 20px;
+	height: 230px;
 }
 .about-item:nth-of-type(odd){
 	background-color: #f0f6da;
 }
 .about-title{
 	font-size: x-large;
+	padding-bottom: 10px;
 }
 .about-image{
 }
 .img-prv img{
 	object-fit:bottom;
 }
-
+/* devise */
+.devise{
+	min-height: 600px;
+	padding: 20px;
+}
+.field{
+	padding-bottom: 15px;
+}
+.user-label{
+	text-align: right;
+}
+.btn-position{
+	margin: 5px auto;
+}
+@media screen and (max-width:768px) {
+	.user-label{
+		text-align: left;
+	}
+}
