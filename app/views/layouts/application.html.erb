@@ -47,32 +47,15 @@
           <% end %>
           </div>
     </header>
-    <%= render 'layouts/notifications' %>
-
-      <div class="container main">
+    <div class="main">
+      <%= render 'layouts/notifications' %>
+      <div class="container">
         <%= yield %>
       </div>
+    </div>
 
     <footer>
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-2">
-            <div class="logo">
-            <%= link_to root_path do %>
-            <div class="logo-link"></div>
-          <% end %>
-          </div>
-        </div>
-        <div class="col-md-3 footer-text"><br><br>©︎ all rights reserved by PlantDiary.Inc.</div>
-        <div class="col-md-7 footer-item">
-          <% if signed_in? %>
-            <%= render "layouts/after_login" %>
-          <% else %>
-            <%= render "layouts/before_login" %>
-          <% end %>
-        </div>
-      </div>
+        <span class="footer-text">©︎ all rights reserved by PlantDiary.Inc.</span>
     </footer>
   </body>
 </html>
