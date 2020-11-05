@@ -1,17 +1,22 @@
-<h1><%= @category.name %></h1>
+<div class="container">
+  <div class="row">
+  	<div class="col-12">
+	  <h1><%= @category.name %></h1>
+	  <div class="row">
+		<div class="col-lg-8">
+		    <%= render "plants/post_plants", plants: @plants %>
+		</div>
+		<!-- サイドバー -->
+		<div class="col-lg-4 sideber">
+		  <div>
+		    <h3><%= @category_1.name %></h3>
+		    <%= render "categories/sideber", plants: @plant_1 %>
+		  </div>
 
-<div>
-    <%= render "plants/post_plants", plants: @plants %>
-</div>
-<!-- サイドバー -->
-<div>
-  <div>
-    <h3><%= @category_1.name %></h3>
-    <%= render "categories/sideber", plants: @plant_1 %>
-  </div>
-
-  <div>
-    <h3><%= @category_2.name %></h3>
-      <%= render "categories/sideber", plants: @plant_2 %>
-  </div>
+		  <div>
+		    <h3><%= @category_2.name %></h3>
+		      <%= render "categories/sideber", plants: @plant_2 %>
+		  </div>
+		</div>
+  	</div>
 </div>
