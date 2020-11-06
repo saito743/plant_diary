@@ -216,7 +216,8 @@ footer {
 .about-item:nth-of-type(odd),
 .user-plant-list,
 .plant-item:hover,
-.sideber-item:hover {
+.sideber-item:hover
+.user-list:hover {
 	background-color: #f0f6da;
 }
 .about-title{
@@ -305,6 +306,12 @@ footer {
 	text-align: left;
 	word-break:break-all
 }
+.follow-introduction{
+	height: 100px;
+	max-height: 100px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+}
 .user-name{
 	font-size: 25px;
 	font-weight: bold;
@@ -351,6 +358,11 @@ footer {
     height: 100px;
     max-height: 100px;
 }
+.user-list{
+	margin: 15px;
+	padding-bottom: 15px;
+	border-bottom: 3px dashed #c3d825;
+}
 .plant-icon{
 	color: #333;
 	display: flex;
@@ -367,6 +379,23 @@ footer {
 }
 .user-page-bottom{
 	padding: 20px 150px;
+}
+.nav-link{
+	text-align: center;
+}
+.follow-user-profile img{
+	border-radius: 50%;
+}
+.follow-btn{
+	display: flex;
+	align-items: flex-end;
+}
+.user-info{
+	text-align: left;
+	height: 200px;
+}
+.plant-log{
+	margin: 5px 0;
 }
 /*　カテゴリ一覧　*/
 .plant-page{
@@ -403,7 +432,7 @@ footer {
 	height: 150px;
 	text-align: left;
 }
-.plant-body,{
+.plant-body{
 	word-break: break-all;
 	overflow: hidden;
     text-overflow: ellipsis;
@@ -430,10 +459,13 @@ footer {
 .sideber-icon{
 	margin-top: 20px
 }
-
 @media screen and (max-width:1024px) {
 	.sideber{
 		display: none;
+	}
+	.title-long{
+		font-size: 25px;
+		width: 90%;
 	}
 }
 

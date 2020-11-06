@@ -1,4 +1,10 @@
-<h1>フォロー中ユーザー 一覧</h1>
-<div class="followed_list">
-  <%= render "follows/follow_user_index", users: @followed_users %>
+<div class="container plant-page">
+  <div class="row">
+  	<div class="col-12 title">
+	  <h1 class="title-long">フォロー中ユーザー 一覧</h1>
+	    <div class="followed_list">
+	      <%= render "follows/follow_user_index", users: @followed_users %>
+	    </div>
+	</div>
+  </div>
 </div>
