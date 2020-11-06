@@ -2,10 +2,18 @@
   <% plants.each do |plant| %>
     <%= link_to plant_path(plant) do %>
       <div class="plant-item row">
-      	<div class="col-6">
+      	<div class="col-4">
           <%= attachment_image_tag(plant, :image, :fill, 200, 200) %><br>
           <%= plant.updated_at.strftime("%Y/%m/%d") %>
         </div>
+          <div class="col-2 post-user">
+            <%= link_to user_path(plant) do %>
+              <div class="post-user-link">
+                <%= image_tag attachment_url(plant.user, :image, :fill, 80, 80, fallback: "no_image.jpg"), size:'80x80' %><br>
+                <%= plant.user.name %>
+              </div>
+            <% end %>
+          </div>
         <div class="col-6">
           <div class="plant-text">
             <span id="plant-name"><%= plant.name %></span><br>

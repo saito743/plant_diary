@@ -19,17 +19,33 @@
 		    <%= render "users/user_post_plant", plants: @plants, user: @user %>
 		  </div>
 	    </div>
-
 	  </div>
 	</div>
-	<div class="row">
-		<h2>いいね一覧</h2>
-		<div>
-		  <%= render "plants/post_plants", plants: @user_like_plants %>
-		</div>
-		<h2>フォロー中ユーザーの投稿</h2>
-		<div>
-		  <%= render "plants/followed_user_post", plants: @followed_users_plant %>
-		</div>
-	</div>
-</div>
+<!-- いいね・フォローユーザーの投稿 -->
+	  <div class="row user-page-bottom">
+		<div class="col-12">
+		  	<!-- タブ -->
+		  <ul class="nav nav-tabs">
+		  	<li class="nav-item">
+			  <a href="#likes" class="nav-link active" data-toggle="tab">
+				<h5>いいね一覧</h5>
+			  </a>
+			</li>
+			  <li class="nav-item">
+			  	<a href="#followed" class="nav-link" data-toggle="tab">
+			  	  <h5>フォロー中ユーザーの投稿</h5>
+			  	</a>
+			  </li>
+		    </ul>
+		    <!-- タブ内容 -->
+			<div class="tab-content">
+			  <div id="likes" class="tab-pane active">
+			    <%= render "plants/post_plants", plants: @user_like_plants %>
+			  </div>
+
+			  <div id="followed" class="tab-pane">
+			    <%= render "plants/followed_user_post", plants: @followed_users_plant %>
+			  </div>
+		    </div>
+		  </div>
+	    </div>

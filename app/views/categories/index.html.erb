@@ -3,13 +3,13 @@
   	<div class="col-12 title">
 	  <h1><%= @category.name %></h1>
 	  <div class="row">
-		<div class="col-lg-8">
+		<div class="col-lg-9">
 		  <div class="row">
 		    <%= render "plants/post_plants", plants: @plants %>
 		  </div>
 		</div>
 		<!-- サイドバー -->
-		<div class="offset-1 col-lg-3 sideber">
+		<div class="col-lg-3 sideber">
 		  <div class="row">
 		    <div class="col-12 sub-title">
 		      <h4><%= @category_1.name %></h4>
@@ -23,7 +23,6 @@
 		      <%= render "categories/sideber", plants: @plant_2 %>
 		  </div>
 		</div>
-	  </div>
   	</div>
   </div>
 </div>

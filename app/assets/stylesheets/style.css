@@ -29,7 +29,8 @@ header{
 	padding: 5px 0;
 }
 .search,
-.hm-icon{
+.hm-icon,
+.login-user{
 	display: inline-flex;
 	justify-content: flex-end;
 }
@@ -48,6 +49,14 @@ header{
 .search {
 	padding-top: 15px;
 	padding-right: 20px;
+}
+.login-user{
+	line-height: 60px;
+	padding: 0 20px;
+}
+.login-user img{
+	margin: auto 10px;
+	border-radius: 50%;
 }
 /* ハンバーガーアイコン */
 .hm-icon {
@@ -277,9 +286,8 @@ footer {
 	}
 }
 /* ユーザーページ */
-.user-page,
-.plant-page{
-	min-height: 800px;
+.user-page{
+	min-height: 600px;
 	margin-top: 20px;
 	padding: 0 50px;
 }
@@ -357,7 +365,14 @@ footer {
 	background-color:#f7c114;
 	color: #fff;
 }
+.user-page-bottom{
+	padding: 20px 150px;
+}
 /*　カテゴリ一覧　*/
+.plant-page{
+	min-height: 800px;
+	margin-top: 30px;
+}
 .plant-list{
 	margin-top: 10px;
 }
@@ -366,13 +381,29 @@ footer {
 	padding: 10px;
 	border-bottom: 3px dashed #c3d825;
 }
-
+.post-user{
+  	display: flex;
+  	align-items: flex-end;
+  	padding: 10px;
+  	justify-content: space-around;
+}
+.post-user-link{
+	text-align: center;
+	padding: 10px;
+}
+.post-user-link:hover{
+	background-color: #c3d825;
+	border-radius: 30%;
+}
+.post-user img{
+	border-radius: 50%;
+}
 .plant-text{
 	max-height: 150px;
 	height: 150px;
 	text-align: left;
 }
-.plant-body{
+.plant-body,{
 	word-break: break-all;
 	overflow: hidden;
     text-overflow: ellipsis;
