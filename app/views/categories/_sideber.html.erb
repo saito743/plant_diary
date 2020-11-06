@@ -1,9 +1,25 @@
-<% plants.each do |plant| %>
-  <div>
+<div class="sideber-list col-12">
+  <% plants.each do |plant| %>
   	<%= link_to plant_path(plant) do %>
-  	  <%= attachment_image_tag(plant, :image, :fill, 200, 200) %>
-  	  <%= plant.name %>
-  	  <%= plant.body %>
-  	<% end %>
-  </div>
-<% end %>
+  	  <div class="sideber-item row">
+  	    <div class="col-xl-6">
+  	      <%= attachment_image_tag(plant, :image, :fill, 125, 125) %>
+  	    </div>
+  	    <div class="col-xl-6 sideber-text">
+  	      <span class="plant-name"><%= plant.name %></span>
+  	      <div class="sideber-icon plant-icon">
+            <span class="fas fa-heart">
+              <%= plant.likes.count %>
+            </span>
+            <span class="far fa-comment-dots">
+              <%= plant.comments.count %>
+            </span>
+            <span class="fas fa-pen-fancy">
+              <%= plant.trees.count %>
+            </span>
+          </div>
+        </div>
+      </div>
+  	  <% end %>
+  <% end %>
+</div>

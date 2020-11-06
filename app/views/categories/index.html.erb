@@ -1,22 +1,29 @@
-<div class="container">
+<div class="container plant-page">
   <div class="row">
-  	<div class="col-12">
+  	<div class="col-12 title">
 	  <h1><%= @category.name %></h1>
 	  <div class="row">
 		<div class="col-lg-8">
+		  <div class="row">
 		    <%= render "plants/post_plants", plants: @plants %>
+		  </div>
 		</div>
 		<!-- サイドバー -->
-		<div class="col-lg-4 sideber">
-		  <div>
-		    <h3><%= @category_1.name %></h3>
-		    <%= render "categories/sideber", plants: @plant_1 %>
+		<div class="offset-1 col-lg-3 sideber">
+		  <div class="row">
+		    <div class="col-12 sub-title">
+		      <h4><%= @category_1.name %></h4>
+		      <%= render "categories/sideber", plants: @plant_1 %>
+		    </div>
 		  </div>
 
-		  <div>
-		    <h3><%= @category_2.name %></h3>
+		    <div class="col-12 sub-title">
+		      <h4><%= @category_2.name %></h4>
+		    </div>
 		      <%= render "categories/sideber", plants: @plant_2 %>
 		  </div>
 		</div>
+	  </div>
   	</div>
+  </div>
 </div>

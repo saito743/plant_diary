@@ -166,7 +166,8 @@ footer {
 }
 
 /* yield */
-.main{
+.main,
+.plant-page{
 	min-height: 600px;
 }
 /* topページ */
@@ -204,7 +205,9 @@ footer {
 	min-height: 230px;
 }
 .about-item:nth-of-type(odd),
-.user-plant-list {
+.user-plant-list,
+.plant-item:hover,
+.sideber-item:hover {
 	background-color: #f0f6da;
 }
 .about-title{
@@ -274,7 +277,9 @@ footer {
 	}
 }
 /* ユーザーページ */
-.user-page{
+.user-page,
+.plant-page{
+	min-height: 800px;
 	margin-top: 20px;
 	padding: 0 50px;
 }
@@ -353,6 +358,48 @@ footer {
 	color: #fff;
 }
 /*　カテゴリ一覧　*/
+.plant-list{
+	margin-top: 10px;
+}
+.plant-item{
+	margin: 10px 0;
+	padding: 10px;
+	border-bottom: 3px dashed #c3d825;
+}
+
+.plant-text{
+	max-height: 150px;
+	height: 150px;
+	text-align: left;
+}
+.plant-body{
+	word-break: break-all;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+.sub-title h4{
+	border-bottom: 5px dashed #c3d825;
+	margin: 0 auto;
+}
+.sideber{
+	margin-top: 30px;
+	padding: 10px;
+}
+.sideber-list{
+	margin-top: 15px;
+	padding: 10px;
+}
+.sideber-item{
+	padding: 10px 0;
+}
+.sideber-text{
+	text-align: left;
+}
+.sideber-icon{
+	margin-top: 20px
+}
+
 @media screen and (max-width:1024px) {
 	.sideber{
 		display: none;
