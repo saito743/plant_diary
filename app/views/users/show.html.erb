@@ -1,19 +1,53 @@
-<div>
-  <% if @user.id == current_user.id %>
-    <%= render "users/my_page", user: @user %>
-  <% else %>
-    <%= render "users/user_page",user: @user %>
-  <% end %>
-</div>
-<div>
-  <%= render "plants/post_plants", plants: @plants %>
-</div>
-<%= link_to "もっと見る", user_plants_path(@user) %>
-<h2>いいね一覧</h2>
-<div>
-  <%= render "plants/post_plants", plants: @user_like_plants %>
-</div>
-<h2>フォロー中ユーザーの投稿</h2>
-<div>
-  <%= render "plants/followed_user_post", plants: @followed_users_plant %>
-</div>
+<div class="container-fluid">
+	<div class="row user-page">
+	  <div class="col-12 title">
+		  <% if @user.id == current_user.id %>
+		    <h1>My Page</h1>
+		  <% else %>
+		    <h1>User Page</h1>
+		  <% end %>
+
+	    <div class="row">
+	  	  <div class="col-lg-5 user-info">
+		    <% if @user.id == current_user.id %>
+		      <%= render "users/my_page", user: @user %>
+		    <% else %>
+		      <%= render "users/user_page",user: @user %>
+		    <% end %>
+		  </div>
+		  <div class="col-lg-6 user-plant-list">
+		    <%= render "users/user_post_plant", plants: @plants, user: @user %>
+		  </div>
+	    </div>
+	  </div>
+	</div>
+<!-- いいね・フォローユーザーの投稿 -->
+	  <div class="row user-page-bottom">
+		<div class="col-12">
+		  	<!-- タブ -->
+		  <ul class="nav nav-tabs">
+		  	<li class="nav-item">
+			  <a href="#likes" class="nav-link active" data-toggle="tab">
+				<h5>いいね一覧</h5>
+				<strong>-User likes list-</strong>
+			  </a>
+			</li>
+			  <li class="nav-item">
+			  	<a href="#followed" class="nav-link" data-toggle="tab">
+			  	  <h5>フォロー中ユーザーの投稿</h5>
+			  	  <p>-List of posts by users who followed-</p>
+			  	</a>
+			  </li>
+		    </ul>
+		    <!-- タブ内容 -->
+			<div class="tab-content">
+			  <div id="likes" class="tab-pane active">
+			    <%= render "plants/post_plants", plants: @user_like_plants %>
+			  </div>
+
+			  <div id="followed" class="tab-pane">
+			    <%= render "plants/followed_user_post", plants: @followed_users_plant %>
+			  </div>
+		    </div>
+		  </div>
+	    </div>

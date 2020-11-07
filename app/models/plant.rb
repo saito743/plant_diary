@@ -14,7 +14,7 @@ class Plant < ApplicationRecord
 	validates :name, presence: true,
 					 length: { maximum:30 }
 	validates :body, presence: true,
-					 length: { maximum:300 }
+					 length: { maximum:800 }
 	validates :plante, length: { maximum:30 }
 	validates :difficulty, numericality: {
 				greater_than_or_equal_to: 1,

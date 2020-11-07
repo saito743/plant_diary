@@ -1,10 +1,26 @@
+
 <% @plant.comments.each do |comment| %>
-  <div>
-  	<%= comment.user.name %>
-    <%= attachment_image_tag(comment, :comment_image, :fill, 150, 150) %>
-    <%= comment.body %>
-    <% if comment.user_id = current_user.id %>
-      <%= link_to "削除", plant_comment_path(comment.plant, comment),method: :delete, remote: true %>
-    <% end %>
+<div class="row plant-com justify-content-center">
+  <div class="col-3">
+    <div class="com-user-img">
+      <%= image_tag attachment_url(comment.user, :image, :fill, 100, 100, fallback: "no_image.jpg"), size:'80x80' %><br>
+  	  <%= comment.user.name %>
+  	</div>
   </div>
+  <div class="col-6 com-text">
+  	<div class="row">
+  	  <div class="col-lg-5">
+    	<%= attachment_image_tag(comment, :comment_image, :fill, 150, 150) %>
+      </div>
+      <div class="col-lg-6 com-body">
+	    <%= comment.body %>
+	    <div class="com-btn">
+		  <% if comment.user_id = current_user.id %>
+		    <%= link_to "削除", plant_comment_path(comment.plant, comment),method: :delete, remote: true, class: "btn btn-outline-danger" %>
+		  <% end %>
+		</div>
+	</div>
+    </div>
+  </div>
+</div>
 <% end %>

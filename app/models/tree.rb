@@ -6,6 +6,6 @@ class Tree < ApplicationRecord
 
 	validates :title,:body, presence: true
 	validates :title, length:{ maximum:30 }
-	validates :body, length:{ maximum:200 }
+	validates :body, length:{ maximum:400 }
 
 end

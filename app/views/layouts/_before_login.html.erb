@@ -1,6 +1,25 @@
-<%= link_to "新規登録",new_user_registration_path, class:"btn" %>
-<%= link_to "ログイン",new_user_session_path, class:"btn" %>
-<%= link_to "初心者おすすめ", categories_path(category_id: 1) %>
-<%= link_to "慣れてきた人おすすめ",categories_path(category_id: 2) %>
-<%= link_to "上級者おすすめ",categories_path(category_id: 3) %>
-<%= link_to "Help！",help_path %>
+<ul>
+  <%= link_to new_user_registration_path do%>
+    <li>新規登録</li>
+  <% end %>
+
+  <%= link_to new_user_session_path do %>
+    <li>ログイン</li>
+  <% end %>
+
+  <%= link_to categories_path(category_id: 1) do %>
+    <li>初心者おすすめ</li>
+  <% end %>
+
+  <%= link_to categories_path(category_id: 2) do %>
+    <li>慣れてきた人おすすめ</li>
+  <% end %>
+
+  <%= link_to categories_path(category_id: 3) do %>
+    <li>上級者おすすめ</li>
+  <% end %>
+
+  <%= link_to help_path do %>
+    <li>Help！</li>
+  <% end %>
+</ul>

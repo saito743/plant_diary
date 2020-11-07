@@ -1,38 +1,45 @@
 <%= form_for(plant) do |f| %>
-  <div class="img-prv">
-    <%= image_tag "no_image.jpg",size:'300x300',id: "img_prev" %>
-  	<%= f.attachment_field :image, id: "post_img" %>
-    <%= javascript_include_tag 'img-prev' %>
+  <div class="row justify-content-center">
+    <div class="img-prv col-lg-5">
+      <%= image_tag "no_image.jpg",size:'300x300',id: "img_prev" %><br>
+    	<%= f.attachment_field :image, id: "post_img" %>
+      <%= javascript_include_tag 'img-prev' %>
+    </div>
+    <div class="col-lg-5 col-md-8 form-plant">
+      <div class="row form">
+      	<div class="col-3"><%= f.label :name, "品種名" %></div>
+      	<div class="offset-1"><%= f.text_field :name %></div>
+      </div>
+      <div class="row form">
+      	<div class="col-3"><%= f.label :plante, "分類・学名" %></div>
+      	<div class="offset-1"><%= f.text_field :plante %></div>
+      </div>
+      <div id="star" class="row">
+        <div class="col-3"><%= f.label :difficulty, "難易度" %></div>
+        <span class="offset-1"><%= f.hidden_field :difficulty %></span>
+        <%= javascript_include_tag 'jquery.raty.js' %>
+        <script>
+          $("#star").raty({
+            score: 1,
+            size  :36,
+            starOff: "<%= asset_path('star-off.png') %>",
+              starOn : "<%= asset_path('star-on.png') %>",
+              scoreName: "plant[difficulty]"
+           });
+        </script>
+      </div>
+      <div class="row form">
+        <div class="col-3"><%= f.label :tag_name, "タグ" %></div>
+        <div class="offset-1"><%= f.text_field :tag_name, value: tag_list %></div>
+      </div>
+    </div>
   </div>
-  <div>
-  	<%= f.label :name, "品種名" %>
-  	<%= f.text_field :name %>
+  <div class="row justify-content-center form-plant-body">
+    	<div class="body-title"><%= f.label :body, "本文" %></div>
+    	<%= f.text_area :body, class: "plant-body" %>
   </div>
-  <div>
-  	<%= f.label :plante, "分類・学名" %>
-  	<%= f.text_field :plante %>
+    <div class="row justify-content-center">
+      <%= f.submit plant.new_record?? "投稿する" : "変更を保存する", class:"col-5 btn btn-info" %>
+    </div>
   </div>
-  <div id="star">
-    <%= f.label :difficulty, "難易度" %>
-    <%= f.hidden_field :difficulty %>
-    <%= javascript_include_tag 'jquery.raty.js' %>
-    <script>
-      $("#star").raty({
-        score: 1,
-        size  :36,
-        starOff: "<%= asset_path('star-off.png') %>",
-          starOn : "<%= asset_path('star-on.png') %>",
-          scoreName: "plant[difficulty]"
-       });
-    </script>
-  </div>
-  <div>
-    <%= f.label :tag_name, "タグ" %>
-    <%= f.text_field :tag_name, value: tag_list %>
-  </div>
-  <div>
-  	<%= f.label :body, "本文" %>
-  	<%= f.text_area :body %>
-  </div>
-    <%= f.submit plant.new_record?? "投稿する" : "変更を保存する" %>
 <% end %>

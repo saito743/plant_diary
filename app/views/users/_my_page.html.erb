@@ -1,17 +1,29 @@
-<h1>マイページ</h1>
-  <div>
-    <%= attachment_image_tag(@user, :image, :fill, 300, 300, fallback: "no_image.jpg") %><br>
-    <span><%= user.name %></span>
+<div class="row justify-content-center">
+  <div class="profile">
+    <%= attachment_image_tag(user, :image, :fill, 270, 270, fallback: "no_image.jpg")%>
   </div>
-  <div>
-    <span>自己紹介</span><br>
-      <%= user.introduction %><br>
-    <span>好きな植物：<%= user.like_plant %></span><br>
-    <%= link_to "編集",edit_user_path(user) %>
+</div>
+<div class="row justify-content-center">
+  <div class="col-8">
+    <span class="user-name"><%= user.name %></span>
+    <div class="profile-text">
+      <span class="user-item">自己紹介</span><br>
+      <span class="profile-text"><%= user.introduction %></span><br>
+      <span class="user-item">好きな植物：</span>
+      <%= user.like_plant %><br>
+    </div>
   </div>
-  <%= link_to user_followed_path(@user) do %>
-    フォロー中ユーザー：<%= @user.follower.count %>
-  <% end %>
-  <%= link_to user_follower_path(@user) do %>
-    フォロワー：<%= @user.followed.count %>
-  <% end %>
+</div>
+<div class="row justify-content-center">
+  <div class="col-5 followed">
+    <%= link_to user_followed_path(@user) do %>
+      フォロー中ユーザー：<%= @user.follower.count %>
+    <% end %>
+  </div>
+  <div class="col-5 follower">
+    <%= link_to user_follower_path(@user) do %>
+      フォロワー：<%= @user.followed.count %>
+    <% end %>
+  </div>
+    <%= link_to "編集",edit_user_path(user),class: "btn btn-user btn-info col-6" %>
+</div>

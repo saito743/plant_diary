@@ -1,15 +1,27 @@
 <% users.each do |user| %>
-  <div>
-    <%= link_to user_path(user) do %>
-        <%= attachment_image_tag(user, :image, :fill, 300, 300, fallback: "no_image.jpg") %>
-        <%= user.name %>
-    <% end %>
-      <div>
-        <% if current_user.following?(user) %>
-  		    <%= link_to "フォロー解除", user_follows_path(user),remote: true, method: :delete %>
-  	    <% else %>
-  		   <%= link_to "フォローする", user_follows_path(user),remote: true, method: :post %>
-  	    <% end %>
+  <div class="row justify-content-center">
+    <div class="col-9">
+      <div class="row user-list">
+        <%= link_to user_path(user) do %>
+            <div class="follow-user-profile">
+              <%= image_tag attachment_url(user, :image, :fill, 200, 200, fallback: "no_image.jpg"), size:'200x200' %>
+            </div>
+        <% end %>
+        <div class="offset-1 col-md-7 follow-user-info">
+          <div class="row">
+            <span class="user-name col-12"><%= user.name %></span>
+            <span class="col-12 plant-log">育てた植物：<%= user.plants.count %></span>
+            <span class="col-12 follow-introduction profile-text">自己紹介：<%= user.introduction %></span>
+          </div>
+          <div class="row justify-content-end follow-btn">
+            <% if current_user.following?(user) %>
+      		    <%= link_to "フォロー解除", user_follows_path(user),class: "btn btn-info",remote: true, method: :delete %>
+      	    <% else %>
+      		   <%= link_to "フォローする", user_follows_path(user),class: "btn btn-outline-info",remote: true, method: :post %>
+      	    <% end %>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 <% end %>

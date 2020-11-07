@@ -5,35 +5,63 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
     <header>
-      <div class="text-right">
-        <%= form_tag(search_path, method: :get) do %>
-          <%= text_field_tag 'search[content]', '', placeholder: "Search" %>
+      <div class="container flex-header">
+        <div class="logo">
+          <%= link_to root_path do %>
+          <div class="logo-link"></div>
         <% end %>
+        </div>
+        <% if signed_in? %>
+          <div class="login-user">
+            <%= link_to user_path(current_user) do %>
+              <%= image_tag attachment_url(current_user, :image, :fill, 80, 80, fallback: "no_image.jpg"), size:'50x50' %>
+              <%= current_user.name %>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="search">
+          <%= form_tag(search_path, method: :get) do %>
+            <%= text_field_tag 'search[content]', '', placeholder: "植物名で検索", class: "form-control" %>
+          <% end %>
+        </div>
+
+        <div class="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
       </div>
 
-      <div class="hm-icon">
-        <a class="menu-trigger" href="#">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-      </div>
-      <div class="sp-menu">
-        <% if signed_in? %>
-          <%= render "layouts/after_login" %>
-        <% else %>
-          <%= render "layouts/before_login" %>
-        <% end %>
-      </div>
+        <div class="sp-menu">
+          <div class="sp-logo"></div>
+          <% if signed_in? %>
+            <%= render "layouts/after_login" %>
+          <% else %>
+            <%= render "layouts/before_login" %>
+          <% end %>
+          </div>
     </header>
-    <%= render 'layouts/notifications' %>
-    <%= yield %>
+    <div class="main">
+      <%= render 'layouts/notifications' %>
+        <%= yield %>
+    </div>
+
+<footer>
+    <span class="footer-text">©︎ all rights reserved by PlantDiary.Inc.</span>
+</footer>
   </body>
 </html>

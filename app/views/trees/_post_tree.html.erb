@@ -1,19 +1,24 @@
- <% plant.trees.each do |tree| %>
-    <div>
-      <%= attachment_image_tag(tree, :image, :fill, 150, 150) %>
+<% plant.trees.each do |tree| %>
+  <div class="row post-tree">
+    <div class="col-4 tree-image">
+        <%= attachment_image_tag(tree, :image, :fill, 150, 150) %>
+        <div class="tree-btn">
+          <% if tree.user_id == current_user.id %>
+            <%= link_to "削除",plant_tree_path(tree.plant, tree),method: :delete, class: "btn btn-outline-danger" %>
+            <%= link_to "編集",edit_plant_tree_path(tree.plant, tree),class: "btn btn-info" %>
+          <% end %>
+        </div>
     </div>
-    <div>
-      <%= tree.title %>
-      <% if tree.ask_for_help == true %>
-        <span>Help!</span>
-      <% end %>
+    <div class="col-7">
+      <div class="tree-text">
+        <span class="tree-title"><%= tree.title %></span>
+        <% if tree.ask_for_help == true %>
+          <span class="help-icon">Help!</span>
+        <% end %>
+        <div class="row tree-body">
+          <%= tree.body %>
+        </div>
+      </div>
     </div>
-    <div>
-      <span>本文</span>
-      <%= tree.body %>
-    </div>
-    <% if tree.user_id == current_user.id %>
-      <%= link_to "削除",plant_tree_path(tree.plant, tree),method: :delete %>
-      <%= link_to "編集",edit_plant_tree_path(tree.plant, tree) %>
-    <% end %>
+  </div>
 <% end %>
