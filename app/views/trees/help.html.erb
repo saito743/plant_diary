@@ -1,16 +1,28 @@
-<h1>Help!一覧</h1>
-<div>
-  <% @trees.each do |tree| %>
-  <%= link_to plant_path(tree.plant) do %>
-  <div>
-  	<div>
-      <%= attachment_image_tag(tree, :image, :fill, 200, 200) %>
+<div class="container">
+  <div class="row  justify-content-center plant-page">
+    <div class="col-10 title">
+      <h1>Help!一覧</h1>
+        <% @trees.each do |tree| %>
+          <%= link_to plant_path(tree.plant) do %>
+            <div class="row post-tree help-list">
+            	<div class="col-4">
+                <%= attachment_image_tag(tree, :image, :fill, 200, 200) %>
+              </div>
+              <div class="col-2 post-user">
+                <%= link_to user_path(tree) do %>
+                  <div class="post-user-link">
+                    <%= image_tag attachment_url(tree.user, :image, :fill, 80, 80, fallback: "no_image.jpg"), size:'80x80' %><br>
+                    <%= tree.user.name %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-lg-6 plant-text">
+                <div class="tree-title"><%= tree.title %></div>
+                <div class="tree-body"><%= tree.body %></div>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
     </div>
-    <div>
-      <%= tree.title %>
-      <%= tree.body %>
-    <div>
   </div>
-  <% end %>
-<% end %>
 </div>
