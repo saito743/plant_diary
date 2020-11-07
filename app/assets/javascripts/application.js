@@ -38,3 +38,7 @@ $(function() {
     infinite: true,
   });
 });
+
+$(function(){
+  $('.flash').fadeOut(2000);
+});

@@ -23,6 +23,7 @@ header{
 }
 .main{
 	padding-top: 70px;
+	min-height: 700px;
 }
 .flex-header {
 	display: flex;
@@ -175,7 +176,6 @@ footer {
 }
 
 /* yield */
-.main,
 .plant-page{
 	min-height: 600px;
 }
@@ -400,6 +400,19 @@ footer {
 .plant-info{
 	margin: 15px 0;
 }
+.user-edit-page{
+	margin: 30px 0;
+}
+.user-edit-form{
+	margin-bottom: 20px;
+}
+.user-edit-text{
+	margin-top: 30px;
+}
+.btn-space{
+	margin: 0 15px 15px;
+}
+/*　投稿詳細　*/
 .plant-show-body{
 	height: 150px;
 	text-align: left;
@@ -453,7 +466,9 @@ footer {
 }
 .tree-title-form input,
 .tree-body-form textarea,
-.com-body-form textarea{
+.com-body-form textarea,
+.user-form input,
+.user-form textarea{
 	width: 70%;
 	margin-top: 10px;
 }
@@ -466,7 +481,8 @@ footer {
 .com-btn{
 	text-align: right;
 }
-.com-body-form textarea{
+.com-body-form textarea,
+.user-form textarea{
 	margin-top: 30px;
 	height: 180px;
 }
