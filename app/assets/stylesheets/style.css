@@ -390,12 +390,88 @@ footer {
 	display: flex;
 	align-items: flex-end;
 }
-.user-info{
+.follow-user-info{
 	text-align: left;
 	height: 200px;
 }
 .plant-log{
 	margin: 5px 0;
+}
+.plant-info{
+	margin: 15px 0;
+}
+.plant-show-body{
+	height: 150px;
+	text-align: left;
+}
+.plant-show-text{
+	text-align: left;
+}
+.tree-image{
+}
+.tree-image img{
+	height: 150px;
+	margin: auto;
+}
+.tree-text,
+.com-text{
+	text-align: left;
+}
+.tree-title{
+	font-size: 18px;
+	font-weight: 700;
+}
+.help-icon{
+	padding: 10px;
+	border-radius: 30%;
+	background-color: #e95295;
+	color: #fff;
+}
+.form-check input{
+	width: 18px;
+	height: 18px;
+}
+.post-tree,
+.plant-com,
+.com-form{
+	margin: 15px 0;
+}
+.tree-body,
+.com-body{
+	height: 180px;
+	word-break: break-all;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 10px;
+}
+.tree-btn,
+.com-btn{
+	margin-top: 10px;
+}
+.com-new-btn{
+	margin-bottom: 15px;
+}
+.tree-title-form input,
+.tree-body-form textarea,
+.com-body-form textarea{
+	width: 70%;
+	margin-top: 10px;
+}
+.tree-body-form textarea{
+	height: 100px;
+}
+.com-user-img img{
+	border-radius: 50%;
+}
+.com-btn{
+	text-align: right;
+}
+.com-body-form textarea{
+	margin-top: 30px;
+	height: 180px;
+}
+.edit-tree{
+	margin: 30px 0;
 }
 /*　カテゴリ一覧　*/
 .plant-page{
@@ -468,10 +544,32 @@ footer {
 		width: 90%;
 	}
 }
-
-
-
-
+.form-plant{
+	text-align: left;
+	padding-top: 50px;
+}
+.form{
+	margin: 15px auto;
+	text-align: left;
+}
+#star{
+	width: 100%;
+}
+#star img{
+	width: 24px;
+	height: 100%;
+}
+.form-plant-body{
+	margin: 15px 0;
+}
+.plant-body{
+	width: 80%;
+	height: 150px;
+}
+.body-title{
+	text-align: left;
+    width: 80%;
+}
 
 
 

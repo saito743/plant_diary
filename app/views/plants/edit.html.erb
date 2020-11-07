@@ -1,2 +1,19 @@
-<h1>投稿内容編集</h1>
-  <%= render "plants/plant_form", plant:@plant,tag_list: @tag_list %>
+<div class="container plant-page">
+  <div class="row">
+  	<div class="col-12">
+  	  <div class="row  justify-content-center">
+  	  	<div class="col-10">
+  	  	  <div class="error_msg">
+			<%= render "layouts/error_msg", model: @plant %>
+		  </div>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-12 title">
+		  <h1>投稿内容編集</h1>
+		    <%= render "plants/plant_form", plant:@plant,tag_list: @tag_list %>
+	    </div>
+	  </div>
+    </div>
+  </div>
+</div>

@@ -1,68 +1,101 @@
-<h1><%= @plant.name %></h1>
-<div>
-  <%= attachment_image_tag(@plant, :image, :fill, 300, 300) %>
-</div>
-<div>
-  分類・学名：<%= @plant.plante %><br>
-  難易度：<div class="star"></div>
-    <script>
-      $(".star").raty({
-        score: 1,
-        size  :36,
-        starOff: "<%= asset_path('star-off.png') %>",
-        starOn : "<%= asset_path('star-on.png') %>",
-        readOnly: true,
-        score: <%= @plant.difficulty %>,
-       });
-    </script>
-  カテゴリ：<%= @plant.category.name %><br>
-  タグ：
-    <% @plant_tags.each do |plant| %>
-      <%= link_to tags_path(tag_id: plant.id) do %>
-        <%= plant.tag_name %>
-      <% end %>
-    <% end %><br>
-  ユーザー名：<%= @plant.user.name %><br>
-</div>
-<div>
-  <span>本文</span>
-  <%= @plant.body %>
-</div>
-<div>
-  <%= @plant.updated_at %>
-  <div class="like-btn">
-    <% if @plant.user_id == current_user.id %>
-      <span class="fas fa-heart"><%= @plant.likes.count %></span>
-      <%= link_to "編集する", edit_plant_path(@plant),class: "btn" %>
-      <%= link_to "削除する", plant_path(@plant), method: :delete %>
-    <% else %>
-      <%= render "likes/like_btn",plant: @plant %>
-    <% end %>
-  </div>
-<div>
-  <h3>日記</h3>
-  <div class="post_tree">
-    <%= render "trees/post_tree",plant: @plant %>
-  </div>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 title">
+      <h1><%= @plant.name %></h1>
+        <div class="row justify-content-center">
 
-<!-- 日記投稿 -->
-<div class="tree_error_msg"></div>
-<div>
-  <% if @plant.user_id == current_user.id %>
-    <%= render "trees/new_tree", plant: @plant, tree: @tree %>
-  <% end %>
-</div>
+          <div class="col-4">
+            <%= attachment_image_tag(@plant, :image, :fill, 300, 300) %>
+          </div>
+          <div class="col-2 post-user">
+            <%= link_to user_path(@plant) do %>
+              <div class="post-user-link">
+                <%= image_tag attachment_url(@plant.user, :image, :fill, 80, 80, fallback: "no_image.jpg"), size:'80x80' %><br>
+                <%= @plant.user.name %>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-lg-3 col-md-8 plant-show-text">
+            <div class="plant-info">分類・学名：<%= @plant.plante %></div>
+            <div class="plant-info">難易度：<span class="star"></span></div>
+              <script>
+                $(".star").raty({
+                  score: 1,
+                  size  :36,
+                  starOff: "<%= asset_path('star-off.png') %>",
+                  starOn : "<%= asset_path('star-on.png') %>",
+                  readOnly: true,
+                  score: <%= @plant.difficulty %>,
+                 });
+              </script>
+            <div class="plant-info">カテゴリ：<%= @plant.category.name %></div>
+            <div class="plant-info">タグ：
+              <% @plant_tags.each do |plant| %>
+                <%= link_to tags_path(tag_id: plant.id) do %>
+                  <%= plant.tag_name %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="plant-info">最終更新日：<%= @plant.updated_at.strftime("%Y/%m/%d") %></div>
+            <div class="like-btn">
+              <% if @plant.user_id == current_user.id %>
+                <span class="fas fa-heart"><%= @plant.likes.count %></span>
+                <%= link_to "編集する", edit_plant_path(@plant),class: "btn btn-success" %>
+                <%= link_to "削除する", plant_path(@plant), method: :delete, class: "btn btn-outline-danger" %>
+              <% else %>
+                <%= render "likes/like_btn",plant: @plant %>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
-<div>
-  <h3>コメント一覧</h3>
-  <div class="post_comment">
-    <%= render "comments/post_comment",plant: @plant  %>
+        <div class="row justify-content-center">
+          <div class="col-10 plant-show-body">
+            <span>本文</span><br>
+            <%= @plant.body %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="sub-title col-11">
+            <h3>日記</h3>
+          </div>
+          <div class="col-11">
+            <%= render "trees/post_tree",plant: @plant %>
+          </div>
+        </div>
+
+        <!-- 日記投稿 -->
+        <div class="row">
+          <div class="tree_error_msg"></div>
+           <div class="col-12"　id="new-tree">
+              <% if @plant.user_id == current_user.id %>
+                <%= render "trees/new_tree", plant: @plant, tree: @tree %>
+              <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="sub-title col-11">
+            <h3>コメント一覧</h3>
+          </div>
+          <div class="col-11">
+            <div class="post_comment">
+              <%= render "comments/post_comment",plant: @plant  %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="sub-title col-11">
+            <h3>コメント投稿</h3>
+          </div>
+          <div class="col-11">
+            <div class="comment_error_msg"></div>
+            <%= render "comments/new_comment",plant: @plant, comment: @comment  %>
+          </div>
+        </div>
+
+    </div>
   </div>
-</div>
-
-<div>
-  <h3>コメント投稿</h3>
-  <div class="comment_error_msg"></div>
-    <%= render "comments/new_comment",plant: @plant, comment: @comment  %>
 </div>

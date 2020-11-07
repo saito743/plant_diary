@@ -7,7 +7,7 @@
               <%= image_tag attachment_url(user, :image, :fill, 200, 200, fallback: "no_image.jpg"), size:'200x200' %>
             </div>
         <% end %>
-        <div class="col-lg-7 user-info">
+        <div class="offset-1 col-md-7 follow-user-info">
           <div class="row">
             <span class="user-name col-12"><%= user.name %></span>
             <span class="col-12 plant-log">育てた植物：<%= user.plants.count %></span>

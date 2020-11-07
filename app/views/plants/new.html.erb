@@ -1,7 +1,20 @@
-<!-- エラーメッセージ表示-->
-<div class="error_msg">
-  <%= render "layouts/error_msg", model: @plant %>
+<div class="container plant-page">
+  <div class="row">
+  	<div class="col-12">
+  	  <div class="row  justify-content-center">
+  	  	<div class="col-10">
+		  <!-- エラーメッセージ表示-->
+		  <div class="error_msg">
+			<%= render "layouts/error_msg", model: @plant %>
+		  </div>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-12 title">
+	  	  <h1>新規投稿</h1>
+	  		<%= render "plants/plant_form", plant:@plant, tag_list: @tag_list %>
+	  	</div>
+	  </div>
+    </div>
+  </div>
 </div>
-
-<h1>新規投稿</h1>
-  <%= render "plants/plant_form", plant:@plant, tag_list: @tag_list %>

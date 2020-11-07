@@ -1,23 +1,31 @@
-<h3>日記投稿</h3>
-<div>
-  <%= form_with(model:[plant, tree]) do |f| %>
-    <div class="img-prv">
-      <%= image_tag "no_image.jpg",size:'200x200',id: "img_prev" %>
-		  <%= f.attachment_field :image, id: "post_img" %>
-      <%= javascript_include_tag 'img-prev' %>
-    </div>
-    <div>
-      <%= f.label :title,"タイトル" %>
-      <%= f.text_field :title, class: "tree_title" %>
-    </div>
-    <div>
-      <%= f.label :body,"本文" %>
-      <%= f.text_field :body, class: "tree_body" %>
-    </div>
-    <div>
-      <%= f.label :ask_for_help, "Help" %>
-      <%= f.check_box :ask_for_help, {} , true, false %>
-    </div>
-      <%= f.submit "投稿する" %>
-  <% end %>
+<div class="row post-tree">
+  <div class="sub-title col-11">
+    <h3>日記投稿</h3>
+      <%= form_with(model:[plant, tree]) do |f| %>
+        <div class="row  post-tree">
+          <div class="img-prv col-4">
+            <%= image_tag "no_image.jpg",size:'200x200',id: "img_prev" %>
+      		  <%= f.attachment_field :image, id: "post_img" %>
+            <%= javascript_include_tag 'img-prev' %>
+          </div>
+          <div class="col-8 tree-text">
+            <div class="row tree-title-form">
+              <div class="col-2"><%= f.label :title,"タイトル" %></div>
+              <%= f.text_field :title, class: "tree_title" %>
+            </div>
+            <div class="row tree-body-form">
+              <div class="col-2"><%= f.label :body,"本文" %></div>
+              <%= f.text_area :body, class: "tree_body" %>
+            </div>
+            <div class="row form-check">
+              <%= f.check_box :ask_for_help, {} , true, false %>
+              <%= f.label :ask_for_help, "Help" %>
+            </div>
+            <div class="row justify-content-center">
+              <%= f.submit "投稿する",class: "btn btn-info col-3" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
 </div>

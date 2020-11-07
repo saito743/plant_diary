@@ -1,11 +1,10 @@
 <div class="col-12 plant-list">
   <% plants.each do |plant| %>
-    <%= link_to plant_path(plant) do %>
-      <div class="plant-item row">
-      	<div class="col-4">
+    <div class="plant-item row">
+      <%= link_to plant_path(plant) do %>
           <%= attachment_image_tag(plant, :image, :fill, 200, 200) %><br>
           <%= plant.updated_at.strftime("%Y/%m/%d") %>
-        </div>
+      <% end %>
           <div class="col-2 post-user">
             <%= link_to user_path(plant) do %>
               <div class="post-user-link">
@@ -41,7 +40,6 @@
               score: <%= plant.difficulty %>,
              });
           </script>
-        </div>
-    <% end %>
+    </div>
   <% end %>
 </div>
