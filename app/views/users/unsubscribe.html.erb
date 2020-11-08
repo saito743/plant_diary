@@ -1,15 +1,21 @@
-<div class="unsubscribe text-center">
-  <strong>本当に退会しますか？</strong>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 title-mini sub-title">
+      <h4>本当に退会しますか？</h4>
+      <div class="row justify-content-center ">
+        <div class="sub-body">
+          退会すると投稿の削除や編集ができなくなります。<br>
+          これまでの投稿は消えません<br>
+          <br>
+          退会する場合は,「退会する」をクリックしてください。
+        </div>
+        <br>
+      </div>
+      <div class="row  justify-content-center">
 
-    <div>
-      退会すると投稿の削除や編集ができなくなります。<br>
-      これまでの投稿は消えません<br>
-      <br>
-      退会する場合は,「退会する」をクリックしてください。
+          <%= link_to "退会しない", :back, class: "btn btn-outline-info btn-space" %>
+          <%= link_to "退会する", user_withdraw_path, method: :PATCH, data: {confirm: "本当に退会してもよろしいですか？"}, class: "glyphicon btn btn-danger btn-space" %>
+      </div>
     </div>
-    <br>
-
-    <%= link_to "退会しない", :back %>
-    <%= link_to "退会する", user_withdraw_path, method: :PATCH, data: {confirm: "本当に退会してもよろしいですか？"}, class: "glyphicon btn btn-danger" %>
-
+  </div>
 </div>

@@ -32,6 +32,12 @@ p, a, span,label,input, h1, h2, h4{
 	padding: 0;
 	box-sizing: border-box;
 }
+.title h3{
+	border-bottom: 5px solid rgba(195, 216, 37, 0.5);
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
 h1{
 	border-bottom: 5px solid rgba(195, 216, 37, 0.5);
 	width: 50%;
@@ -525,7 +531,8 @@ footer {
 	margin-top: 30px;
 	height: 180px;
 }
-.edit-tree{
+.edit-tree,
+.sub-body{
 	margin: 30px 0;
 }
 /*　カテゴリ一覧　*/
@@ -625,6 +632,18 @@ footer {
 	text-align: left;
     width: 80%;
 }
-
-
-
+.title-mini{
+	text-align: center;
+}
+.tag{
+	padding: 5px;
+	background-color: #c3d825;
+	border-radius: 10%;
+}
+.tag:hover{
+	font-weight: bold;
+	background-color: #f7c114;
+}
+.plant-info a:hover{
+	text-decoration: none;
+}

@@ -1,4 +1,10 @@
-<h1><%= @tag.tag_name %> タグの付いた投稿一覧</h1>
-<div>
-  <%= render "plants/post_plants",plants: @tag.plants %>
+<div class="container">
+  <div class="row user-page">
+  	<div class="col-12 title">
+	  <h3><%= @tag.tag_name %> タグの付いた投稿一覧</h3>
+		<div>
+		  <%= render "plants/post_plants",plants: @tag.plants %>
+		</div>
+	</div>
+  </div>
 </div>
