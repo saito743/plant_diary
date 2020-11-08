@@ -225,7 +225,8 @@ footer {
 	height: 600px;
 }
 .main-img img,
-.img-prv img{
+.img-prv img,
+about-image img{
 	object-fit:cover;
 }
 .top-image{
@@ -237,22 +238,37 @@ footer {
 	position: absolute;
     top: 150px;
     left: 180px;
-    font-size: initial;
-    background-color: rgba(255,255,255,0.5);
-    padding: 25px;
-    border-radius: 50% 40% 50% 40%;
+    line-height: 200%;
+    color: #fff;
+    font-size:20px;
+    text-shadow: 1px 2px 3px #2e3740;
 }
 .top-msg p{
 	font-size: larger;
+}
+.top-btn{
+	width: 100%;
+	margin-top: 20px;
 }
 .about{
 	padding: 20px;
 }
 .about-item{
-	padding: 20px 0;
-	min-height: 230px;
+	padding: 20px;
+	max-height: 260px;
 }
-.about-item:nth-of-type(odd),
+.about-image{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-height: 200px;
+}
+.about-image img{
+	object-fit:bottom;
+	width: auto;
+	height: 80%;
+}
+.about-item:nth-of-type(even),
 .user-plant-list,
 .plant-item:hover,
 .sideber-item:hover,
@@ -269,7 +285,24 @@ footer {
 	font-size: x-large;
 	padding-bottom: 10px;
 }
-.about-image{
+
+.about-top{
+	height: 250px;
+    background-size: cover;
+    background-position: center;
+    padding: 20px 10px;
+    margin: 10px 0;
+    text-align: center;
+}
+.about-top:nth-of-type(1){
+	background-image: image-url('about-top1.jpg');
+}
+.about-top:nth-of-type(2){
+	background-image: image-url('about-top2.jpg');
+	margin: 0 50px;
+}
+.about-top:nth-of-type(3){
+	background-image: image-url('about-top3.jpg');
 }
 .img-prv img{
 	object-fit:bottom;
