@@ -1,21 +1,21 @@
 <div class="container">
-  <div class="row">
+  <div class="row plant-page">
     <div class="col-12 title">
       <h1><%= @plant.name %></h1>
         <div class="row justify-content-center">
 
-          <div class="col-4">
+          <div class="col-lg-4 col-md-6">
             <%= attachment_image_tag(@plant, :image, :fill, 300, 300) %>
           </div>
-          <div class="col-2 post-user">
-            <%= link_to user_path(@plant) do %>
+          <div class="col-lg-2 col-md-4 post-user">
+            <%= link_to user_path(@plant.user) do %>
               <div class="post-user-link">
                 <%= image_tag attachment_url(@plant.user, :image, :fill, 80, 80, fallback: "no_image.jpg"), size:'80x80' %><br>
                 <%= @plant.user.name %>
               </div>
             <% end %>
           </div>
-          <div class="col-lg-3 col-md-8 plant-show-text">
+          <div class="col-lg-4 col-md-8 plant-show-text">
             <div class="plant-info">分類・学名：<%= @plant.plante %></div>
             <div class="plant-info">難易度：<span class="star"></span></div>
               <script>
@@ -32,7 +32,7 @@
             <div class="plant-info">タグ：
               <% @plant_tags.each do |plant| %>
                 <%= link_to tags_path(tag_id: plant.id) do %>
-                  <%= plant.tag_name %>
+                  <span class="tag"><%= plant.tag_name %></span>
                 <% end %>
               <% end %>
             </div>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="row justify-content-center">
-          <div class="col-10 plant-show-body">
+          <div class="col-10 plant-body">
             <span>本文</span><br>
             <%= @plant.body %>
           </div>
