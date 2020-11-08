@@ -6,19 +6,52 @@
       <div class="main-img"><img src="<%= asset_path "top-3.jpg" %> " width=100% height=700px ></div>
       <div class="main-img"><img src="<%= asset_path "top-4.jpg" %> " width=100% height=700px ></div>
     </div>
-    <span class="top-msg">
-      -Healing, soothing, peace <br>
-      May the encounter<br>
-      with new plants be good for you
-    </span>
+    <div class="top-msg">
+      Plant Diaryは<br>
+      植物の観察日記をつけられるサイトです。<br>
+      他のユーザーが育てている植物を見たり、<br>
+      コメントを通じて<br>
+      悩みを相談をすることができます。
+      <div><%= link_to "新規登録", new_user_registration_path, class: "btn btn-info top-btn" %></div>
+      <div><%= link_to "ログイン", new_user_session_path, class: "btn btn-success top-btn" %></div>
+  </div>
   </div>
 <div class="container">
   <div class="row about">
     <div class="col-md-12">
       <span class="title"><h1>About</h1></span>
-
+      <div class="row about-top-back justify-content-center">
+        <div class="col-lg-3 col-md-4 about-top">
+          <div class="about-top-icon"><img src="<%= asset_path "about-top-1.png" %> " width=30% height=100% ></div>
+          <span>
+            難易度を目安に<br>
+            初心者でも育てやすい植物を<br>
+            探す事ができます。<br>
+            植物名から検索も可能です。
+          </span>
+        </div>
+        <div class="col-lg-3 col-md-4 about-top">
+          <div class="about-top-icon"><img src="<%= asset_path "about-top-2.png" %> " width=30% height=100% ></div>
+          <span>
+            ユーザーをフォローしたり<br>
+            次に育てたい植物や<br>
+            参考にしたい投稿を<br>
+            お気に入りする事ができます。
+          </span>
+        </div>
+        <div class="col-lg-3 col-md-4 about-top">
+          <div class="about-top-icon"><img src="<%= asset_path "about-top-3.png" %> " width=30% height=100% ></div>
+          <span>
+            ユーザー同士で<br>
+            コメントを通じて交流ができます<br>
+            また、自分の投稿に<br>
+            「Help」をつけて<br>
+            質問もできます。
+          </span>
+        </div>
+      </div>
       <div class="row about-item">
-        <div class="col-md-5 about-image"></div>
+        <div class="col-md-5 about-image"><img src="<%= asset_path "about-1.png" %> " width=50% height=100% ></div>
         <div class="col-md-7 about-msg">
           <span class="about-title">Plant diaryとは？</span>
           <span>
@@ -45,11 +78,11 @@
             アドバイスをくれるはずです。
           </span>
         </div>
-        <div class="col-md-5 about-image"></div>
+        <div class="col-md-5 about-image"><img src="<%= asset_path "about-2.jpeg" %> " width=100% height=100% ></div>
       </div>
 
       <div class="row about-item">
-        <div class="col-md-5 about-image"></div>
+        <div class="col-md-5 about-image"><img src="<%= asset_path "about-3.png" %> " width=100% height=100% ></div>
         <div class="col-md-7 about-msg">
           <span class="about-title">自信がある人は</span>
           <span>
