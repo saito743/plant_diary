@@ -29,6 +29,8 @@ p, a, span,label,input, h1, h2, h4{
 }
 .flash{
 	padding: 0;
+	position: fixed;
+	z-index: 1;
 }
 *{
 	margin: 0;

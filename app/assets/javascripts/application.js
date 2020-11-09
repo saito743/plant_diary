@@ -38,6 +38,10 @@ $(function() {
     infinite: true,
   });
 });
+//flashメッセージフェードアウト
+$(function(){
+  $('.flash').fadeOut(2000);
+});
 //アニメーション（下から）
 $(function(){
   $(window).on('load scroll',function (){
