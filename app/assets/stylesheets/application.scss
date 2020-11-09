@@ -62,7 +62,7 @@ header{
 .main{
 	padding-top: 70px;
 	min-height: 700px;
-	wigth: 100%;
+	width: 100%;
 }
 .flex-header {
 	display: flex;
@@ -245,7 +245,9 @@ about-image img{
 	position: absolute;
     top: 150px;
     left: 180px;
-    line-height: 200%;
+}
+.top-msg-text{
+	line-height: 200%;
     color: #fff;
     font-size:20px;
     text-shadow: 1px 2px 3px #2e3740;
@@ -691,7 +693,7 @@ about-image img{
 .animation-bottom{
 	opacity : 0;
 	visibility: hidden;
-	transition: 1s;
+	transition: 3s;
 	transform: translateY(0);
 }
 .active-bottom{
@@ -702,7 +704,7 @@ about-image img{
 .animation-rigth{
 	opacity : 0;
 	visibility: hidden;
-	transition: 1s;
+	transition: 2s;
 	transform: translateX(50px);
 }
 .active-rigth{
@@ -713,7 +715,7 @@ about-image img{
 .animation-left{
 	opacity : 0;
 	visibility: hidden;
-	transition: 1s;
+	transition: 2s;
 	transform: translateX(-30px);
 }
 .active-left{
