@@ -40,7 +40,7 @@ $(function() {
 });
 //flashメッセージフェードアウト
 $(function(){
-  $('.flash').fadeOut(2000);
+  $('.flash').fadeOut(3000);
 });
 //アニメーション（下から）
 $(function(){

@@ -345,22 +345,23 @@ about-image img{
 	}
 }
 /* エラーメッセージ */
-#error_explanation{
-	border: 5px solid rgba(186,38,54,0.5);
-	padding: 20px;
-	margin: 10px;
-	border-radius: 50% 40% 50% 40%;
+
+.error-msg{
+	margin: auto;
+	width: 70%;
 }
-#error_explanation h2{
-	font-size: 22px;
-	border-bottom: 5px solid rgba(186,38,54,0.3);
-	width: 80%;
-	margin: 0 auto;
+.comment_error_msg,
+.tree_error_msg{
+	margin: 10px auto;
+    width: 70%;
+    text-align: left;
 }
-#error_explanation ul{
-	text-align: left;
-	margin-left: 30%;
-	margin-top: 10px;
+.alert-danger{
+	position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
 }
 @media screen and (max-width:768px) {
 	#error_explanation h2{

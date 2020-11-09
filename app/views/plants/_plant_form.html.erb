@@ -35,8 +35,10 @@
     </div>
   </div>
   <div class="row justify-content-center form-plant-body">
+    <div class="col-9">
     	<div class="body-title"><%= f.label :body, "本文" %></div>
     	<%= f.text_area :body, class: "plant-body" %>
+    </div>
   </div>
     <div class="row justify-content-center">
       <%= f.submit plant.new_record?? "投稿する" : "変更を保存する", class:"col-5 btn btn-info" %>
