@@ -1,5 +1,5 @@
 <div class="sideber-list col-12">
-  <% plants.each do |plant| %>
+  <% plants.first(3).each do |plant| %>
   	<%= link_to plant_path(plant) do %>
   	  <div class="sideber-item row">
   	    <div class="col-xl-6">

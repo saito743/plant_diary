@@ -37,4 +37,11 @@ class User < ApplicationRecord
   def active_for_authentication? #退会済みユーザーのログイン防止
     super && (self.is_deleted === false)
   end
+
+  def self.guest #ゲストユーザーログインボタンを表示
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "ゲストユーザー"
+    end
+  end
 end

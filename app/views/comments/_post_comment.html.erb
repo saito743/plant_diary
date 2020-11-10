@@ -15,7 +15,7 @@
       <div class="col-lg-6 com-body">
 	    <%= comment.body %>
 	    <div class="com-btn">
-		  <% if comment.user_id = current_user.id %>
+		  <% if comment.user_id == current_user.id %>
 		    <%= link_to "削除", plant_comment_path(comment.plant, comment),method: :delete, remote: true, class: "btn btn-outline-danger" %>
 		  <% end %>
 		</div>

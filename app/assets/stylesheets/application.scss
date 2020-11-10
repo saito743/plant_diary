@@ -20,13 +20,14 @@
 .slick-next:before {
     display: none;
 }
+container-fluid{
+	margin:0;
+}
 p, a, span,label,input, h1, h2, h4{
 	color: #2e3740;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 }
-.flash{
-	padding: 0;
-}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -53,12 +54,13 @@ footer{
 header{
 	position: fixed;
     top: 0;
-	z-index: 99;
+	z-index: 1;
 	width: 100%;
 }
 .main{
 	padding-top: 70px;
 	min-height: 700px;
+	width: 100%;
 }
 .flex-header {
 	display: flex;
@@ -146,6 +148,8 @@ header{
 	font-size: 14px;
 	text-align: center;
 	padding: 0;
+	position: fixed;
+	z-index: 1;
 }
 .notice {
   background-color: #ffec47;
@@ -215,6 +219,9 @@ footer {
 	min-height: 600px;
 }
 /* topページ */
+.container-top{
+	width: 100%;
+}
 .top-main{
 	height: 630px;
 	margin-bottom: 70px;
@@ -238,7 +245,9 @@ about-image img{
 	position: absolute;
     top: 150px;
     left: 180px;
-    line-height: 200%;
+}
+.top-msg-text{
+	line-height: 200%;
     color: #fff;
     font-size:20px;
     text-shadow: 1px 2px 3px #2e3740;
@@ -255,6 +264,7 @@ about-image img{
 }
 .about-item{
 	padding: 20px;
+	margin: 30px 0;
 	max-height: 260px;
 }
 .about-image{
@@ -285,12 +295,11 @@ about-image img{
 	font-size: x-large;
 	padding-bottom: 10px;
 }
-
 .about-top{
 	height: 250px;
     background-size: cover;
     background-position: center;
-    padding: 20px 10px;
+    padding: 30px 10px;
     margin: 10px 0;
     text-align: center;
 }
@@ -334,22 +343,23 @@ about-image img{
 	}
 }
 /* エラーメッセージ */
-#error_explanation{
-	border: 5px solid rgba(186,38,54,0.5);
-	padding: 20px;
-	margin: 10px;
-	border-radius: 50% 40% 50% 40%;
+
+.error-msg{
+	margin: auto;
+	width: 70%;
 }
-#error_explanation h2{
-	font-size: 22px;
-	border-bottom: 5px solid rgba(186,38,54,0.3);
-	width: 80%;
-	margin: 0 auto;
+.comment_error_msg,
+.tree_error_msg{
+	margin: 10px auto;
+    width: 70%;
+    text-align: left;
 }
-#error_explanation ul{
-	text-align: left;
-	margin-left: 30%;
-	margin-top: 10px;
+.alert-danger{
+	position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
 }
 @media screen and (max-width:768px) {
 	#error_explanation h2{
@@ -382,7 +392,8 @@ about-image img{
 .profile-text{
 	margin: 0 auto;
 	text-align: left;
-	word-break:break-all
+	word-break:break-all;
+	min-height: 150px;
 }
 .follow-introduction{
 	height: 100px;
@@ -468,6 +479,9 @@ about-image img{
 	display: flex;
 	align-items: flex-end;
 }
+.follow_btn{
+	margin-bottom: 10px;
+}
 .follow-user-info{
 	text-align: left;
 	height: 200px;
@@ -513,7 +527,7 @@ about-image img{
 	font-weight: 700;
 }
 .help-icon{
-	padding: 10px;
+	padding: 3px 10px;
 	border-radius: 30%;
 	background-color: #e95295;
 	color: #fff;
@@ -527,9 +541,12 @@ about-image img{
 .com-form{
 	margin: 15px 0;
 }
+.post-tree{
+	border-bottom: 1px solid #c3d825;
+}
 .tree-body,
 .com-body{
-	height: 180px;
+	min-height: 150px;
 	word-break: break-all;
 	overflow: hidden;
     text-overflow: ellipsis;
@@ -679,4 +696,38 @@ about-image img{
 }
 .plant-info a:hover{
 	text-decoration: none;
+}
+/* スクロールでフェードイン */
+.animation-bottom{
+	opacity : 0;
+	visibility: hidden;
+	transition: 3s;
+	transform: translateY(0);
+}
+.active-bottom{
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.animation-rigth{
+	opacity : 0;
+	visibility: hidden;
+	transition: 2s;
+	transform: translateX(50px);
+}
+.active-rigth{
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+}
+.animation-left{
+	opacity : 0;
+	visibility: hidden;
+	transition: 2s;
+	transform: translateX(-30px);
+}
+.active-left{
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
 }

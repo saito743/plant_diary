@@ -38,7 +38,46 @@ $(function() {
     infinite: true,
   });
 });
-
+//flashメッセージフェードアウト
 $(function(){
-  $('.flash').fadeOut(2000);
+  $('.flash').fadeOut(3000);
+});
+//アニメーション（下から）
+$(function(){
+  $(window).on('load scroll',function (){
+    $('.animation-bottom').each(function(){
+      var target = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var height = $(window).height();
+      if (scroll > target - height){
+        $(this).addClass('active-bottom');
+      }
+    });
+  });
+});
+//アニメーション（右から）
+$(function(){
+  $(window).on('load scroll',function (){
+    $('.animation-rigth').each(function(){
+      var target = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var height = $(window).height();
+      if (scroll > target - height){
+        $(this).addClass('active-rigth');
+      }
+    });
+  });
+});
+//アニメーション（左から）
+$(function(){
+  $(window).on('load scroll',function (){
+    $('.animation-left').each(function(){
+      var target = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var height = $(window).height();
+      if (scroll > target - height){
+        $(this).addClass('active-left');
+      }
+    });
+  });
 });

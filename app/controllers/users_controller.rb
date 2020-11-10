@@ -27,11 +27,13 @@ before_action :authenticate_user!
 	end
 
 	def unsubscribe
+		if current_user.email == 'guest@example.com'
+            redirect_to user_path(current_user), alert: 'ゲストユーザーは退会できません。'
+        end
 		@user = User.find_by(params[:id])
 	end
 
 	def withdraw
-		binding.pry
 		@user = current_user
 		@user.update(is_deleted: true)
 		reset_session
