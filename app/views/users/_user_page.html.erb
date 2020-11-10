@@ -5,7 +5,10 @@
 </div>
 <div class="row justify-content-center">
   <div class="col-8">
-    <span class="user-name"><%= user.name %></span>
+    <div class="user-name">
+      <%= user.name %>
+      <span class="user_delete"><%= user_withdrawal(user) %></span>
+    </div>
     <div class="profile-text">
       <span class="user-item">自己紹介</span><br>
       <span class="profile-text"><%= user.introduction %></span><br>

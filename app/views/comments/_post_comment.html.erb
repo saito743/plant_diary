@@ -16,7 +16,7 @@
 	    <%= comment.body %>
 	    <div class="com-btn">
 		  <% if comment.user_id == current_user.id %>
-		    <%= link_to "削除", plant_comment_path(comment.plant, comment),method: :delete, remote: true, class: "btn btn-outline-danger" %>
+		    <%= link_to "削除", plant_comment_path(comment.plant, comment),method: :delete, remote: true, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-outline-danger" %>
 		  <% end %>
 		</div>
 	</div>
