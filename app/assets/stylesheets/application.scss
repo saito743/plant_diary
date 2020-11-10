@@ -27,11 +27,7 @@ p, a, span,label,input, h1, h2, h4{
 	color: #2e3740;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 }
-.flash{
-	padding: 0;
-	position: fixed;
-	z-index: 1;
-}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -58,7 +54,7 @@ footer{
 header{
 	position: fixed;
     top: 0;
-	z-index: 10;
+	z-index: 1;
 	width: 100%;
 }
 .main{
@@ -152,6 +148,8 @@ header{
 	font-size: 14px;
 	text-align: center;
 	padding: 0;
+	position: fixed;
+	z-index: 1;
 }
 .notice {
   background-color: #ffec47;
@@ -394,7 +392,8 @@ about-image img{
 .profile-text{
 	margin: 0 auto;
 	text-align: left;
-	word-break:break-all
+	word-break:break-all;
+	min-height: 150px;
 }
 .follow-introduction{
 	height: 100px;
@@ -480,6 +479,9 @@ about-image img{
 	display: flex;
 	align-items: flex-end;
 }
+.follow_btn{
+	margin-bottom: 10px;
+}
 .follow-user-info{
 	text-align: left;
 	height: 200px;
@@ -525,7 +527,7 @@ about-image img{
 	font-weight: 700;
 }
 .help-icon{
-	padding: 10px;
+	padding: 3px 10px;
 	border-radius: 30%;
 	background-color: #e95295;
 	color: #fff;
@@ -539,9 +541,12 @@ about-image img{
 .com-form{
 	margin: 15px 0;
 }
+.post-tree{
+	border-bottom: 1px solid #c3d825;
+}
 .tree-body,
 .com-body{
-	height: 180px;
+	min-height: 150px;
 	word-break: break-all;
 	overflow: hidden;
     text-overflow: ellipsis;

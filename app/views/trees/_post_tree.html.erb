@@ -1,7 +1,8 @@
 <% plant.trees.each do |tree| %>
   <div class="row post-tree">
     <div class="col-4 tree-image">
-        <%= attachment_image_tag(tree, :image, :fill, 150, 150) %>
+        <%= attachment_image_tag(tree, :image, :fill, 150, 150) %><br>
+        <%= tree.updated_at.strftime("%Y/%m/%d") %>
         <div class="tree-btn">
           <% if tree.user_id == current_user.id %>
             <%= link_to "削除",plant_tree_path(tree.plant, tree),method: :delete, class: "btn btn-outline-danger" %>
