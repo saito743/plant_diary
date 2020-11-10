@@ -10,6 +10,9 @@
               <div class="post-user-link">
                 <%= image_tag attachment_url(plant.user, :image, :fill, 80, 80, fallback: "no_image.jpg"), size:'80x80' %><br>
                 <%= plant.user.name %>
+                <div>
+                  <span class="user_delete"><%= user_withdrawal(plant.user) %></span>
+                </div>
               </div>
             <% end %>
           </div>

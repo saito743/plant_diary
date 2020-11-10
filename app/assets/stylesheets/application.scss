@@ -278,6 +278,11 @@ about-image img{
 	width: auto;
 	height: 80%;
 }
+.about-mini{
+	font-size: 15px;
+	text-align: center;
+	color: red;
+}
 .about-item:nth-of-type(even),
 .user-plant-list,
 .plant-item:hover,
@@ -409,6 +414,10 @@ about-image img{
 	font-size: 18px;
 	font-weight: 600;
 	margin-bottom: 10px;
+}
+.user_delete{
+    background-color: #ffec47;
+    font-size: 13px;
 }
 .followed,
 .follower{
