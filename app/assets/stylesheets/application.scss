@@ -45,7 +45,7 @@ h1{
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
-
+.form-body{}
 /* ヘッダー */
 header,
 footer{
@@ -634,12 +634,7 @@ about-image img{
 	height: 150px;
 	text-align: left;
 }
-.plant-body{
-	word-break: break-all;
-	overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left;
-}
+
 .sub-title h4{
 	border-bottom: 5px dashed #c3d825;
 	margin: 0 auto;
@@ -691,6 +686,11 @@ about-image img{
 .plant-body{
 	width: 80%;
 	height: 150px;
+	padding: 3px;
+	word-break: break-all;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
 }
 .body-title{
 	text-align: left;

@@ -1,0 +1,49 @@
+<!-- 難易度表記の重複防止でフォロー中ユーザーの投稿のみ分けています -->
+<div class="col-12 plant-list">
+  <% plants.each do |plant| %>
+    <div class="plant-item row">
+      <%= link_to plant_path(plant) do %>
+          <%= attachment_image_tag(plant, :image, :fill, 200, 200) %><br>
+          <%= plant.updated_at.strftime("%Y/%m/%d") %>
+      <% end %>
+          <div class="col-2 post-user">
+            <%= link_to user_path(plant.user) do %>
+              <div class="post-user-link">
+                <%= image_tag attachment_url(plant.user, :image, :fill, 80, 80, fallback: "no_image.jpg"), size:'80x80' %><br>
+                <%= plant.user.name %>
+                <div>
+                  <span class="user_delete"><%= user_withdrawal(plant.user) %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <div class="col-6">
+          <div class="plant-text">
+            <span id="plant-name"><%= plant.name %></span><br>
+            <span class="plant-body"><%= plant.body %></span><br>
+          </div>
+          <div class="plant-icon">
+            <span class="fas fa-heart">
+              <%= plant.likes.count %>
+            </span>
+            <span class="far fa-comment-dots">
+              <%= plant.comments.count %>
+            </span>
+            <span class="fas fa-pen-fancy">
+              <%= plant.trees.count %>
+            </span>
+          </div>
+          <span id="followed-star-<%= plant.id %>"></span>
+        </div>
+          <script>
+            $("#followed-star-<%= plant.id %>").raty({
+              size  :36,
+              starOff: "<%= asset_path('star-off.png') %>",
+              starOn : "<%= asset_path('star-on.png') %>",
+              readOnly: true,
+              score: <%= plant.difficulty %>,
+             });
+          </script>
+    </div>
+  <% end %>
+</div>

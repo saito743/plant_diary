@@ -9,10 +9,10 @@
   </div>
   <div class="col-6 com-text">
   	<div class="row">
-  	  <div class="col-lg-5">
+  	  <div class="">
     	<%= attachment_image_tag(comment, :comment_image, :fill, 150, 150) %>
       </div>
-      <div class="col-lg-6 com-body">
+      <div class="com-body">
 	    <%= comment.body %>
 	    <div class="com-btn">
 		  <% if comment.user_id == current_user.id %>
