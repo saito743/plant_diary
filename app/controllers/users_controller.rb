@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find_by(id: params[:id])
+		if @user.nil?
+			flash[:alert] = "存在しないユーザーです"
+			return	redirect_to root_path
+		end
 		@plants = Plant.where(user_id: params[:id]).order(created_at: "DESC").limit(2)
 		user_like = @user.likes.pluck(:plant_id)
 		@user_like_plants = Plant.where(id: user_like)

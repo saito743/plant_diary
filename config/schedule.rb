@@ -20,13 +20,12 @@
 # Learn more: http://github.com/javan/whenever
 require File.expand_path(File.dirname(__FILE__) + "/environment")
 rails_env = Rails.env.to_sym
-env :PATH, ENV['PATH']
-set :environment, rails_env
 set :output, 'log/cron.log'
 #３時間で追加テータを削除
 every 3.hours do
   begin
     runner "Batch::DataReset.data_reset"
+    Rails.logger.error("success")
   rescue => e
     Rails.logger.error("aborted rails runner")
     raise e

@@ -20,7 +20,7 @@
         <%= javascript_include_tag 'jquery.raty.js' %>
         <script>
           $("#star").raty({
-            score: 1,
+            score: <%= star_edit(plant) %>,
             size  :36,
             starOff: "<%= asset_path('star-off.png') %>",
               starOn : "<%= asset_path('star-on.png') %>",
