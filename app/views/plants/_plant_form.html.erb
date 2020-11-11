@@ -8,11 +8,11 @@
     <div class="col-lg-5 col-md-8 form-plant">
       <div class="row form">
       	<div class="col-3"><%= f.label :name, "品種名" %></div>
-      	<div class="offset-1"><%= f.text_field :name %></div>
+      	<div class="offset-1"><%= f.text_field :name, placeholder: "30字以内" %></div>
       </div>
       <div class="row form">
       	<div class="col-3"><%= f.label :plante, "分類・学名" %></div>
-      	<div class="offset-1"><%= f.text_field :plante %></div>
+      	<div class="offset-1"><%= f.text_field :plante, placeholder: "30字以内(記入なしでもOK)",class: "form-font" %></div>
       </div>
       <div id="star" class="row">
         <div class="col-3"><%= f.label :difficulty, "難易度" %></div>
@@ -20,7 +20,7 @@
         <%= javascript_include_tag 'jquery.raty.js' %>
         <script>
           $("#star").raty({
-            score: 1,
+            score: <%= star_edit(plant) %>,
             size  :36,
             starOff: "<%= asset_path('star-off.png') %>",
               starOn : "<%= asset_path('star-on.png') %>",
@@ -31,13 +31,14 @@
       <div class="row form">
         <div class="col-3"><%= f.label :tag_name, "タグ" %></div>
         <div class="offset-1"><%= f.text_field :tag_name, value: tag_list %></div>
+        <span class="offset-3 edit-icon">、もしくは, で区切ると複数つけられます</span>
       </div>
     </div>
   </div>
   <div class="row justify-content-center form-plant-body">
     <div class="col-9">
     	<div class="body-title"><%= f.label :body, "本文" %></div>
-    	<%= f.text_area :body, class: "plant-body" %>
+    	<%= f.text_area :body, class: "plant-body", placeholder: "800字以内" %>
     </div>
   </div>
     <div class="row justify-content-center">

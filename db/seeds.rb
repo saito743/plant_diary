@@ -423,24 +423,61 @@
 		ask_for_help: true,
 		image: File.open("./app/assets/images/help-1.jpg")
 	)
-	2.times do |n|
-	  Like.create(
-	  	plant_id: n + 2,
-	  	user_id: n + 1,
-	 )
-	end
-	2.times do |n|
-	  Like.create(
-	  	plant_id: n + 3,
-	  	user_id: n + 2,
-	 )
-	end
+
+	Like.create(
+		plant_id: 2,
+	  	user_id: 1,
+	)
 	Like.create(
 		plant_id: 3,
 	  	user_id: 1,
 	)
 	Like.create(
+		plant_id: 4,
+	  	user_id: 1,
+	)
+	Like.create(
+		plant_id: 6,
+	  	user_id: 1,
+	)
+	Like.create(
+		plant_id: 9,
+	  	user_id: 1,
+	)
+	Like.create(
 		plant_id: 1,
+	  	user_id: 2,
+	)
+	Like.create(
+		plant_id: 8,
+	  	user_id: 2,
+	)
+	Like.create(
+		plant_id: 9,
+	  	user_id: 2,
+	)
+	Like.create(
+		plant_id: 2,
+	  	user_id: 3,
+	)
+	Like.create(
+		plant_id: 3,
+	  	user_id: 3,
+	)
+	Like.create(
+		plant_id: 9,
+	  	user_id: 3,
+	)
+	Like.create(
+		plant_id: 1,
+	  	user_id: 4,
+	)
+	Like.create(
+		plant_id: 3,
+	  	user_id: 4,
+	)
+	Like.create(
+		plant_id: 5,
 	  	user_id: 4,
 	)
 

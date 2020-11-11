@@ -26,6 +26,10 @@ before_action :authenticate_user!
 
 	def show
 		@plant = Plant.find_by(id: params[:id])
+		if @plant.nil?
+			flash[:alert] = "削除されたか存在しない投稿です"
+			return	redirect_to root_path
+		end
 		@plant_tags = @plant.tags
 		@tree = Tree.new
 		@comment = Comment.new
