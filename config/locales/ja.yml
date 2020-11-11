@@ -15,17 +15,17 @@ ja:
         password_confirmation: 確認用パスワード
         remember_me: 次回から自動的にログイン
       plant:
-        image_id: 画像
+        image: 画像
         name: 植物・品種名
         body: 本文
         plante: 学名・属名
         difficulty: 難易度
       tree:
-        image_id: 画像
+        image: 画像
         title: タイトル
         body: 本文
       comment:
-        comment_image_id: 画像
+        comment_image: 画像
         body: コメント
       tag:
         tag_name: タグ名
