@@ -36,7 +36,7 @@
                 <% end %>
               <% end %>
             </div>
-            <div class="plant-info">最終更新日：<%= @plant.updated_at.strftime("%Y/%m/%d") %></div>
+            <div class="plant-info">最終更新日：<%= @plant.trees.last.updated_at.strftime("%Y/%m/%d") %></div>
             <div class="like-btn">
               <% if @plant.user_id == current_user.id %>
                 <span class="fas fa-heart"><%= @plant.likes.count %></span>
@@ -52,7 +52,10 @@
         <div class="row justify-content-center">
           <div class="col-10 plant-body">
             <span>本文</span><br>
-            <%= @plant.body %>
+            <%= @plant.body %><br>
+              <% if @plant.created_at != @plant.updated_at %>
+                <div class="edit-icon">（編集済み）</div>
+              <% end %>
           </div>
         </div>
 

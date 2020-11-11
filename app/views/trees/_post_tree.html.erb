@@ -18,6 +18,9 @@
         <% end %>
         <div class="row tree-body">
           <%= tree.body %>
+            <% if tree.created_at != tree.updated_at %>
+              <div class="col-12 edit-icon">（編集済み）</div>
+            <% end %>
         </div>
       </div>
     </div>

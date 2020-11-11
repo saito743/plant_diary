@@ -1,9 +1,9 @@
-<div class="row post-tree">
+<div class="row">
   <div class="sub-title col-11">
     <h3>日記投稿</h3>
     <div class="tree_error_msg"></div>
       <%= form_with(model:[plant, tree]) do |f| %>
-        <div class="row  post-tree">
+        <div class="row">
           <div class="img-prv col-4">
             <%= image_tag "no_image.jpg",size:'200x200',id: "img_prev" %>
       		  <%= f.attachment_field :image, id: "post_img" %>
