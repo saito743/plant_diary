@@ -563,7 +563,7 @@ about-image img{
 }
 .tree-btn,
 .com-btn{
-	margin-top: 10px;
+	margin: 10px 0;
 }
 .com-new-btn{
 	margin-bottom: 15px;
@@ -578,6 +578,11 @@ about-image img{
 }
 .tree-body-form textarea{
 	height: 100px;
+}
+.edit-icon{
+	color: grey;
+    text-align: right;
+    font-size: 14px;
 }
 .com-user-img img{
 	border-radius: 50%;

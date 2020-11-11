@@ -36,7 +36,9 @@
                 <% end %>
               <% end %>
             </div>
-            <div class="plant-info">最終更新日：<%= @plant.updated_at.strftime("%Y/%m/%d") %></div>
+            <div class="plant-info">
+              最終更新日：<%= update_history(@plant) %>
+            </div>
             <div class="like-btn">
               <% if @plant.user_id == current_user.id %>
                 <span class="fas fa-heart"><%= @plant.likes.count %></span>
@@ -52,7 +54,8 @@
         <div class="row justify-content-center">
           <div class="col-10 plant-body">
             <span>本文</span><br>
-            <%= @plant.body %>
+            <%= @plant.body %><br>
+            <div class="edit-icon"><%= edit_history(@plant) %></div>
           </div>
         </div>
 
@@ -60,7 +63,7 @@
           <div class="sub-title col-11">
             <h3>日記</h3>
           </div>
-          <div class="col-11">
+          <div class="col-11 post_tree">
             <%= render "trees/post_tree",plant: @plant %>
           </div>
         </div>

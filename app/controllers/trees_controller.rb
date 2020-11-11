@@ -19,8 +19,10 @@ class TreesController < ApplicationController
 		@tree = Tree.find_by(id: params[:id], plant_id: params[:plant_id])
 		if  @tree.update(tree_params)
 			redirect_to plant_path(@tree.plant)
+			flash[:notice] = "投稿が完了しました"
 		else
 			render "edit"
+			flash.now[:alert] = "内容を再度確認してください"
 		end
 	end
 

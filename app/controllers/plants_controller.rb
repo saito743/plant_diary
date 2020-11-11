@@ -17,8 +17,10 @@ before_action :authenticate_user!
 		if 	@plant.save
 			@plant.save_tag(tag_list)
 			redirect_to plant_path(@plant)
+			flash[:notice] = "投稿が完了しました"
 		else
 			render "new"
+			flash.now[:alert] = "内容を再度確認してください"
 		end
 	end
 
@@ -44,8 +46,10 @@ before_action :authenticate_user!
 			@plant.category_auto_update	#カテゴリ自動割り振り
 			@plant.save_tag(tag_list)
 			redirect_to plant_path(@plant)
+			flash[:notice] = "編集内容を保存しました"
 		else
 			render "edit"
+			flash.now[:alert] = "編集内容を再度確認してください"
 		end
 	end
 

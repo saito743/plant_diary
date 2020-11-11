@@ -19,6 +19,7 @@ class Plant < ApplicationRecord
 	validates :difficulty, numericality: {
 				greater_than_or_equal_to: 1,
 				less_than_or_equal_to: 5}
+	validates :image, presence: true
 
 	def category_auto #カテゴリの自動割り振り（新規投稿時）
 		if  self.difficulty == 1.to_s || self.difficulty == 2.to_s
