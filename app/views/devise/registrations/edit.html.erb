@@ -6,23 +6,28 @@
           <div class="error-msg">
             <%= render "devise/shared/error_messages", resource: resource %>
           </div>
-        <div class="field row">
-          <div class="offset-1 col-md-3 user-label"><%= f.label :name, "ユーザー名" %></div>
+        <div class="field row  justify-content-center">
+          <div class="col-md-3 user-label"><%= f.label :name, "ユーザー名" %></div>
           <%= f.text_field :name, autofocus: true, size:40, placeholder: " 2文字以上10文字以下" %>
         </div>
 
-        <div class="field row">
-          <div class="offset-1 col-md-3 user-label"><%= f.label :email,"メールアドレス" %></div>
+        <div class="field row justify-content-center">
+          <div class="col-md-3 user-label"><%= f.label :email,"メールアドレス" %></div>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" , size:40, class: "form-field" %>
         </div>
 
-        <div class="field row">
-          <div class="offset-1 col-md-3 user-label"><%= f.label :password,"パスワード" %></div>
+        <div class="field row justify-content-center">
+          <div class="col-md-3 user-label"><%= f.label :current_password,"現在のパスワード" %></div>
+          <%= f.password_field :current_password, size:40, autocomplete: "current-password" %>
+        </div>
+
+        <div class="field row justify-content-center">
+          <div class="col-md-3 user-label"><%= f.label :password,"新しいパスワード" %></div>
           <%= f.password_field :password, autocomplete: "new-password", size:40, placeholder: "（英数字6文字以上12文字以下）" %>
         </div>
 
-        <div class="field row">
-          <div class="offset-1 col-md-3 user-label"><%= f.label :password_confirmation,"パスワード確認" %></div>
+        <div class="field row justify-content-center">
+          <div class="col-md-3 user-label"><%= f.label :password_confirmation,"新しいパスワード確認" %></div>
           <%= f.password_field :password_confirmation, autocomplete: "new-password", size:40 %>
         </div>
 

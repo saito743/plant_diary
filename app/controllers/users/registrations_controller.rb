@@ -11,6 +11,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def after_update_path_for(resource)
+     user_path(resource)
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
