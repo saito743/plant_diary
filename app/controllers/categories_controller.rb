@@ -5,22 +5,13 @@ class CategoriesController < ApplicationController
 			@plants = Plant.where(category_id: params[:category_id]).sort {|a,b| b.like_ids.count <=> a.like_ids.count}
 			#サイドバーのランキング
 			if 	params[:category_id] == 1.to_s
-				@plant_1 = Plant.where(category_id: 2).sort {|a,b| b.like_ids.count <=> a.like_ids.count}
-				@plant_2 = Plant.where(category_id: 3).sort {|a,b| b.like_ids.count <=> a.like_ids.count}
-				@category_1 = Category.find_by(id: 2)
-				@category_2 = Category.find_by(id: 3)
+				sideber(2, 3)
 			elsif
 				params[:category_id] == 2.to_s
-				@plant_1 = Plant.where(category_id: 1).sort {|a,b| b.like_ids.count <=> a.like_ids.count}
-				@plant_2 = Plant.where(category_id: 3).sort {|a,b| b.like_ids.count <=> a.like_ids.count}
-				@category_1 = Category.find_by(id: 1)
-				@category_2 = Category.find_by(id: 3)
+				sideber(1, 3)
 			else
 				params[:category_id] == 3.to_s
-				@plant_1 = Plant.where(category_id: 1).sort {|a,b| b.like_ids.count <=> a.like_ids.count}
-				@plant_2 = Plant.where(category_id: 2).sort {|a,b| b.like_ids.count <=> a.like_ids.count}
-				@category_1 = Category.find_by(id: 1)
-				@category_2 = Category.find_by(id: 2)
+				sideber(1, 2)
 			end
 
 		else
