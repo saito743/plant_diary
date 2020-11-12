@@ -22,8 +22,8 @@ require File.expand_path(File.dirname(__FILE__) + "/environment")
 rails_env = Rails.env.to_sym
 set :environment, rails_env
 set :output, 'log/cron.log'
-#３時間で追加テータを削除
-every 3.hours do
+#6時間で追加テータを削除
+every 6.hours do
   begin
     runner "Batch::DataReset.data_reset"
     Rails.logger.error("success")
