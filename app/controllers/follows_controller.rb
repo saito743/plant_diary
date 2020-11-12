@@ -3,16 +3,16 @@ class FollowsController < ApplicationController
 
 	def create
 		current_user.follow(params[:user_id])
-		@user = User.find_by(id: params[:user_id])
+		@user = User.find_by(id: current_user.id)
 		@following_users = @user.following_user
 		@followed_users = @user.followed_user
 	end
 
 	def destroy
-		@user = User.find_by(id: params[:user_id])
+		current_user.unfollow(params[:user_id])
+		@user = User.find_by(id: current_user.id)
 		@following_users = @user.following_user
 		@followed_users = @user.followed_user
-		current_user.unfollow(params[:user_id])
 	end
 
 	def follower
