@@ -12,11 +12,11 @@
           <div class="col-8 tree-text">
             <div class="row tree-title-form">
               <div class="col-2"><%= f.label :title,"タイトル" %></div>
-              <%= f.text_field :title, class: "tree_title" %>
+              <%= f.text_field :title, class: "tree_title", placeholder: "30字以内" %>
             </div>
             <div class="row tree-body-form">
               <div class="col-2"><%= f.label :body,"本文" %></div>
-              <%= f.text_area :body, class: "tree_body" %>
+              <%= f.text_area :body, class: "tree_body", placeholder: "400字以内" %>
             </div>
             <div class="row form-check">
               <%= f.check_box :ask_for_help, {} , true, false %>
