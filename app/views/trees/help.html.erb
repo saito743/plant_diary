@@ -9,7 +9,7 @@
                 <%= attachment_image_tag(tree, :image, :fill, 200, 200) %>
               </div>
               <div class="col-2 post-user">
-                <%= link_to user_path(tree) do %>
+                <%= link_to user_path(tree.user) do %>
                   <div class="post-user-link">
                     <%= image_tag attachment_url(tree.user, :image, :fill, 80, 80, fallback: "no_image.jpg"), size:'80x80' %><br>
                     <%= tree.user.name %>
