@@ -13,7 +13,6 @@ class CategoriesController < ApplicationController
 				params[:category_id] == 3.to_s
 				sideber(1, 2)
 			end
-
 		else
 			redirect_to root_path
 		end
