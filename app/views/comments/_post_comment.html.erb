@@ -14,6 +14,7 @@
       </div>
       <div class="com-body">
 	    <%= comment.body %>
+      <p class="edit-icon">コメントの感情分析スコア：<%= comment.score %></p>
 	    <div class="com-btn">
 		  <% if comment.user_id == current_user.id %>
 		    <%= link_to "削除", plant_comment_path(comment.plant, comment),method: :delete, remote: true, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-outline-danger" %>

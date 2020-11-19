@@ -4,21 +4,27 @@
   </div>
 </div>
 <div class="row justify-content-center">
+    <div class="col-9 user-name"><%= user.name %></div>
+    <div class=" col-2 comment-point-image">
+    <!--コメントスコアに応じた花の画像を表示  -->
+    <%= user_comment_point(user) %>
+    <!--コメントスコアをふきだしで表示  -->
+    <p class="explanation">コメントスコア：<%= user_coment_explanation(user) %></p>
+  </div>
+</div>
+<div class="row justify-content-center">
   <div class="col-8">
-    <div class="user-name">
-      <%= user.name %>
-      <span class="user_delete"><%= user_withdrawal(user) %></span>
-    </div>
     <div class="profile-text">
       <span class="user-item">自己紹介</span><br>
       <span class="profile-text"><%= user.introduction %></span><br>
       <span class="user-item">好きな植物：</span>
       <%= user.like_plant %><br>
+      <span class="user_delete"><%= user_withdrawal(user) %></span>
     </div>
   </div>
 </div>
 <div class="row justify-content-center">
-  <div class="follow_btn col-6">
+  <div class="follow_btn col-12">
     <%= render "follows/follow_btn", user: @user %>
   </div>
   <div class="follow_user_count">

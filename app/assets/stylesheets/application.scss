@@ -279,7 +279,6 @@ about-image img{
 .about-item{
 	padding: 20px;
 	margin: 30px 0;
-	max-height: 260px;
 }
 .about-image{
 	display: flex;
@@ -793,4 +792,47 @@ about-image img{
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);
+}
+//コメントスコアに応じた花の画像
+.comment-point-image{
+	position: relative;
+}
+.comment-point-image img{
+	width: 50%;
+	height: auto;
+	border-radius: 50%;
+}
+.explanation {
+      display: none;
+      width: 200px;
+      position: absolute;
+      bottom: 80%;
+      right: 0%;
+      padding: 16px;
+      border-radius: 5px;
+      background: #c3d825;
+      color: #fff;
+      font-weight: bold;
+      font-size:13px;
+      z-index: 1;
+}
+@media screen and (max-width:1024px) {
+	right: 10%;
+}
+    .explanation:after {
+      position: absolute;
+      width: 0;
+      height: 0;
+      rigth: 0;
+      bottom: -19px;
+      margin-left: 10px;
+      border: solid transparent;
+      border-color: rgba(51, 204, 153, 0);
+      border-top-color: #c3d825;
+      border-width: 10px;
+      pointer-events: none;
+      content: " ";
+}
+    img:hover + .explanation {
+      display: block;
 }

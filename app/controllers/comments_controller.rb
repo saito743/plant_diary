@@ -6,12 +6,13 @@ class CommentsController < ApplicationController
 		@comment = Comment.new(comment_params)
 		@comment.user_id = current_user.id
 		@comment.plant_id = @plant.id
+		@comment.score = Language.get_data(comment_params[:body])
 		@comment.save
 	end
 
 	def destroy
 		Comment.find_by(id: params[:id],plant_id: params[:plant_id]).delete
-		@plant = Plant.find(params[:plant_id])
+		@plant = Plant.find_by(params[:plant_id])
 	end
 
 private
