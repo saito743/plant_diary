@@ -500,65 +500,78 @@
 		user_id: 4,
 		plant_id: 1,
 		body: "サフィニアはどうでしょう？色も種類が多く簡単に育てられて、増やすのも簡単なのでおすすめです。ホームセンターによく売っていますよ。",
-		comment_image: File.open("./app/assets/images/comment-1.jpg")
+		comment_image: File.open("./app/assets/images/comment-1.jpg"),
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 1,
 		plant_id: 1,
 		body: "ありがとうございます！色の種類も多いんですね、ホームセンターで見てみます！増やしやすい・・・種が作りやすいんでしょうか？",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 4,
 		plant_id: 1,
 		body: "茎を切って土に刺しておくと根が張る品種ですね、挿木のようなイメージです。種が作りやすいものだとアサガオとかがおすすめです。",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 1,
 		plant_id: 1,
 		body: "挿木はなんとなくわかります、なるほど・・・。アサガオもいいですね、小学生以来です笑",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 3,
 		plant_id: 2,
 		body: "種はジップロックで大丈夫ですよ！乾燥剤を入れたほうがいいみたいです。",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 2,
 		plant_id: 2,
 		body: "ありがとうございます、保存場所って冷蔵庫のイメージがあるんですがあってますか・・・？",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 3,
 		plant_id: 2,
 		body: "ご近所さんからの受け売りなので確実じゃないかもしれませんが、冷蔵庫でOKだったと思います。缶に入れて光を通さないほうがいいとも聞きました。",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 2,
 		plant_id: 2,
 		body: "重ね重ねありがとうございます！缶に入れて保存しておきます！",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 3,
 		plant_id: 3,
 		body: "椿は虫が来ない冬に咲くので、自然に受粉しづらいそうです、受粉させれば実はできますよ！",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 4,
 		plant_id: 3,
 		body: "鳥が受粉させるらしいと聞いたことがあります。鳥が来ないようであれば人工授粉しかないですね。",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 2,
 		plant_id: 3,
 		body: "受粉していないだけだったんですね、お二人ともありがとうございます！来年に人工授粉？に挑戦しようと思います。",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 2,
 		plant_id: 9,
 		body: "咲き終わっただけかと思いますが、密集しているので間引いたほうがいいのではないでしょうか・・・",
+		score: Language.get_data(:body)
 	)
 	Comment.create(
 		user_id: 4,
 		plant_id: 9,
 		body: "咲き終わりだったんですね、もう少し楽しめると思っていました笑　確かに密集していますね・・・アドバイスありがとうございます！",
+		score: Language.get_data(:body)
 	)

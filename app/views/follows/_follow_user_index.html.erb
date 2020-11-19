@@ -9,7 +9,13 @@
         <% end %>
         <div class="offset-1 col-lg-7 follow-user-info">
           <div class="row">
-            <span class="user-name col-12"><%= user.name %></span>
+            <div class="user-name col-9"><%= user.name %></div>
+            <div class=" col-3 comment-point-image">
+                <!--コメントスコアに応じた花の画像を表示  -->
+                <%= index_user_comment_point(user) %>
+                <!--コメントスコアをふきだしで表示  -->
+                <p class="explanation">コメントスコア：<%= index_user_coment_explanation(user) %></p>
+            </div>
             <span class="col-12 plant-log">育てた植物：<%= user.plants.count %></span>
             <span class="col-12 follow-introduction follow-profile-text">自己紹介：<%= user.introduction %></span>
             <!-- 自分をフォローしないように設定 -->

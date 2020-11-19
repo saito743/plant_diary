@@ -1,11 +1,19 @@
 <div class="row justify-content-center">
   <div class="profile">
-    <%= attachment_image_tag(user, :image, :fill, 270, 270, fallback: "no_image.jpg")%>
+    <%= attachment_image_tag(user, :image, :fill, 230, 230, fallback: "no_image.jpg")%>
+  </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-8 user-name"><%= user.name %></div>
+    <div class=" col-2 comment-point-image">
+    <!--コメントスコアに応じた花の画像を表示  -->
+    <%= user_comment_point(user) %>
+    <!--コメントスコアをふきだしで表示  -->
+    <p class="explanation">コメントスコア：<%= user_coment_explanation(user) %></p>
   </div>
 </div>
 <div class="row justify-content-center">
   <div class="col-8">
-    <span class="user-name"><%= user.name %></span>
     <div class="profile-text">
       <span class="user-item">自己紹介</span><br>
       <span class="profile-text"><%= user.introduction %></span><br>
@@ -16,12 +24,12 @@
 </div>
 <div class="row justify-content-center">
   <div class="col-5 followed">
-    <%= link_to user_followed_path(@user) do %>
+    <%= link_to user_followed_path(user) do %>
       フォロー中ユーザー：<%= @user.follower.count %>
     <% end %>
   </div>
   <div class="col-5 follower">
-    <%= link_to user_follower_path(@user) do %>
+    <%= link_to user_follower_path(user) do %>
       フォロワー：<%= @user.followed.count %>
     <% end %>
   </div>
