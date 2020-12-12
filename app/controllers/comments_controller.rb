@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 
 	def destroy
 		Comment.find_by(id: params[:id],plant_id: params[:plant_id]).delete
-		@plant = Plant.find_by(params[:plant_id])
+		@plant = Plant.find(params[:plant_id])
 	end
 
 private
